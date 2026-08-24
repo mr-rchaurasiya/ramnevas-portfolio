@@ -24,7 +24,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="d-flex align-items-center min-vh-100 position-relative py-5 overflow-hidden">
+    <section id="hero" className="d-flex align-items-center min-vh-100 position-relative overflow-hidden" style={{ paddingTop: '90px' }}>
       {/* Decorative Blobs */}
       <motion.div 
         className="bg-blob blob-cyan"
