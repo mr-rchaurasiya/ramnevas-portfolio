@@ -4,7 +4,7 @@ import User from '../models/User.js';
 // @desc    Generate JWT Token
 // @access  Private Helper
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
+  return jwt.sign({ id }, process.env.JWT_SECRET || 'supersecretdevtoken123', {
     expiresIn: '30d',
   });
 };

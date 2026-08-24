@@ -10,26 +10,33 @@ import nodemailer from 'nodemailer';
  * @param {string} options.text - email text body fallback
  */
 const sendEmail = async ({ from, to, subject, html, text }) => {
-  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+  const emailUser = process.env.EMAIL_USER || 'ramnevas8188@gmail.com';
+  const emailPass = process.env.EMAIL_PASS || 'xjqvpiuipedepmxm';
+  const emailHost = process.env.EMAIL_HOST || 'smtp.gmail.com';
+  const emailPort = parseInt(process.env.EMAIL_PORT || '587', 10);
+  const emailSecure = process.env.EMAIL_SECURE === 'true'; // false by default for 587
+  const emailTo = to || process.env.EMAIL_TO || 'ramnevas8188@gmail.com';
+
+  if (!emailUser || !emailPass) {
     console.warn('\n[Nodemailer Warning] EMAIL_USER or EMAIL_PASS not configured in .env.');
     console.warn('Skipping email notification. Message logged to console instead.');
     return { skipped: true };
   }
 
   const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.EMAIL_PORT || '587', 10),
-    secure: process.env.EMAIL_SECURE === 'true', // true for 465, false for 587
+    host: emailHost,
+    port: emailPort,
+    secure: emailSecure,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: emailUser,
+      pass: emailPass,
     },
   });
 
   const mailOptions = {
-    from: `"${from.name}" <${process.env.EMAIL_USER}>`, // Authenticated sender
+    from: `"${from.name}" <${emailUser}>`,
     replyTo: from.email,
-    to: to || process.env.EMAIL_TO || process.env.EMAIL_USER,
+    to: emailTo,
     subject: `Portfolio Contact: ${subject}`,
     text,
     html,
