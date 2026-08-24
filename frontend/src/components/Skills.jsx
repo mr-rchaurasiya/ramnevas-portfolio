@@ -527,9 +527,9 @@ const Skills = () => {
 
                             {/* Interview Point */}
                             {dsaDetails[selectedDsaItem].interview && (
-                              <div className="p-3 bg-info-subtle border-start border-info-3 border-3 rounded">
-                                <span className="text-info small fw-bold d-block mb-1 text-uppercase tracking-wider" style={{ fontSize: '0.7rem' }}>Interview Highlight</span>
-                                <p className="text-white-50 small m-0 leading-relaxed"><i className="bi bi-lightbulb-fill text-warning me-1"></i> {dsaDetails[selectedDsaItem].interview}</p>
+                              <div className="p-3 rounded mb-2" style={{ background: 'rgba(0, 168, 204, 0.08)', border: '1px solid rgba(0, 168, 204, 0.15)', borderLeft: '4px solid #00a8cc' }}>
+                                <span className="small fw-bold d-block mb-1 text-uppercase tracking-wider" style={{ fontSize: '0.7rem', color: '#00a8cc' }}>Interview Highlight</span>
+                                <p className="small m-0 leading-relaxed text-white" style={{ fontSize: '0.82rem' }}><i className="bi bi-lightbulb-fill text-warning me-1"></i> {dsaDetails[selectedDsaItem].interview}</p>
                               </div>
                             )}
                           </motion.div>
