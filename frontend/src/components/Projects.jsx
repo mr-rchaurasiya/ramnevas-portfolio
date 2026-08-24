@@ -74,11 +74,9 @@ const Projects = () => {
                     
                     {(project.githubUrl || project.liveUrl) && (
                       <div className="d-flex gap-3 mt-4">
-                        {project.liveUrl && (
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-custom btn-sm w-50 py-2">
-                            Live Preview
-                          </a>
-                        )}
+                        <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-custom btn-sm w-50 py-2">
+                          Live Show
+                        </a>
                         {project.githubUrl && (
                           <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary-gradient btn-sm w-50 py-2">
                             View Code
