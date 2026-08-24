@@ -1,6 +1,7 @@
 import React from 'react';
 import { portfolioData } from '../utils/portfolioData';
 import { useFetchData } from '../utils/api';
+import AnimatedTitle from './AnimatedTitle';
 
 const Experience = () => {
   const { data: experience, loading } = useFetchData('experience', portfolioData.experience);
@@ -22,7 +23,7 @@ const Experience = () => {
   return (
     <section id="experience" className="position-relative">
       <div className="container">
-        <h2 className="section-title text-white">Work Experience</h2>
+        <AnimatedTitle text="Work Experience" />
         
         <div className="row justify-content-center">
           <div className="col-lg-10">

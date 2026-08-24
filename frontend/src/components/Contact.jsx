@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../utils/portfolioData';
+import AnimatedTitle from './AnimatedTitle';
 
 const Contact = () => {
   const { email, location, linkedin } = portfolioData.personalInfo;
@@ -78,13 +79,13 @@ const Contact = () => {
   return (
     <section id="contact" className="position-relative bg-dark-base">
       <div className="container">
-        <h2 className="section-title text-white">Contact Me</h2>
+        <AnimatedTitle text="Contact Me" />
         
         <div className="row g-5 mt-2">
           {/* Info Details */}
           <div className="col-lg-5">
             <h3 className="text-white fw-bold mb-4 h4">Let's Connect</h3>
-            <p className="text-muted mb-5">
+            <p className="text-white-50 mb-5">
               Have an opening in your development team, a freelance opportunity, or simply want to chat about web technology? Drop me a message and I'll get back to you within 24 hours.
             </p>
             

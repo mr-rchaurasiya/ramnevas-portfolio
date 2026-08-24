@@ -1,6 +1,7 @@
 import React from 'react';
 import { portfolioData } from '../utils/portfolioData';
 import { useFetchData } from '../utils/api';
+import AnimatedTitle from './AnimatedTitle';
 
 const Achievements = () => {
   const { data: achievements, loading } = useFetchData('achievements', portfolioData.achievements);
@@ -22,7 +23,7 @@ const Achievements = () => {
   return (
     <section id="achievements" className="position-relative bg-dark-base">
       <div className="container">
-        <h2 className="section-title text-white">Achievements & Recognitions</h2>
+        <AnimatedTitle text="Achievements & Recognitions" />
         
         <div className="row g-4 justify-content-center">
           {!hasAchievements ? (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { portfolioData } from '../utils/portfolioData';
 import { useFetchData } from '../utils/api';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedTitle from './AnimatedTitle';
 
 const conceptDetails = {
   'DSA': {
@@ -948,7 +949,7 @@ const Skills = () => {
   return (
     <section id="skills" className="position-relative bg-dark-base">
       <div className="container">
-        <h2 className="section-title text-white">Skills & Core Concepts</h2>
+        <AnimatedTitle text="Skills & Core Concepts" />
         
         {/* Technical Skills Sub-Section */}
         <h3 className="h4 text-white-50 fw-bold mb-4 border-bottom pb-2 border-white-10">Technical Skills</h3>

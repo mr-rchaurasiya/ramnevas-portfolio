@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFetchData } from '../utils/api';
+import AnimatedTitle from './AnimatedTitle';
 
 const Resume = () => {
   const { data: resume } = useFetchData('resume', null);
@@ -10,7 +11,7 @@ const Resume = () => {
       <div className="bg-blob blob-purple" style={{ top: '30%', left: '10%' }}></div>
 
       <div className="container text-center">
-        <h2 className="section-title text-white">Resume</h2>
+        <AnimatedTitle text="Resume" />
         
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-8 col-12">

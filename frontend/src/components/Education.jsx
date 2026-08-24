@@ -1,6 +1,7 @@
 import React from 'react';
 import { portfolioData } from '../utils/portfolioData';
 import { useFetchData } from '../utils/api';
+import AnimatedTitle from './AnimatedTitle';
 
 const Education = () => {
   const { data: education, loading } = useFetchData('education', portfolioData.education);
@@ -22,7 +23,7 @@ const Education = () => {
   return (
     <section id="education" className="position-relative bg-dark-base">
       <div className="container">
-        <h2 className="section-title text-white">Education</h2>
+        <AnimatedTitle text="Education" />
         
         <div className="row g-4 justify-content-center">
           {!hasEducation ? (

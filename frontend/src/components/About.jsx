@@ -1,5 +1,6 @@
 import React from 'react';
 import { portfolioData } from '../utils/portfolioData';
+import AnimatedTitle from './AnimatedTitle';
 
 const About = () => {
   const { aboutSummary, aboutDetails } = portfolioData.personalInfo;
@@ -7,14 +8,14 @@ const About = () => {
   return (
     <section id="about" className="position-relative">
       <div className="container">
-        <h2 className="section-title text-white">About Me</h2>
+        <AnimatedTitle text="About Me" />
         
         <div className="row align-items-center g-5">
           <div className="col-lg-6">
             <h3 className="text-white mb-3 fw-bold h4">
               {aboutSummary}
             </h3>
-            <p className="text-muted mb-4">
+            <p className="text-white-50 mb-4">
               {aboutDetails}
             </p>
             
