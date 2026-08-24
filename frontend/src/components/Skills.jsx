@@ -133,6 +133,7 @@ const dsaDetails = {
     complexity: 'Access: O(n) | Search: O(n) | Insert at start: O(1) | Delete at start: O(1)',
     interview: 'Array static size ka hota hai jabki Linked List dynamic size ki hoti hai. List me insertions/deletions at ends faster hote hain.'
   },
+  'My Stack': {}, // safety placeholder
   'Stack': {
     definition: 'Stack ek LIFO (Last In First Out) data structure hai. Jo element last me insert hota hai, wahi pehle remove hota hai.',
     example: '   30  ← Top (Last In, First Out)\n   20\n   10',
@@ -157,14 +158,14 @@ const dsaDetails = {
   'Tree': {
     definition: 'Tree ek non-linear hierarchical data structure hai jo elements ko nodes collections me connect karti hai.',
     example: '        10 (Root)\n       /  \\\n      20   30 (Children)\n     / \\\n    40  50 (Leaf Nodes)',
-    code: '// Node definition for a general tree\nstruct TreeNode {\n    int data;\n    vector<TreeNode*> children;\n};',
+    code: `#include <iostream>\n#include <vector>\nusing namespace std;\n\nstruct TreeNode {\n    int data;\n    vector<TreeNode*> children;\n    TreeNode(int val) { data = val; }\n};\n\nint main() {\n    TreeNode* root = new TreeNode(10);\n    root->children.push_back(new TreeNode(20));\n    root->children.push_back(new TreeNode(30));\n    cout << "Root node: " << root->data << endl;\n    return 0;\n}`,
     complexity: 'Height: Longest path from root node to leaf node.',
     interview: 'File systems directory mapping, JSON/XML parsing tree nodes, decision trees classification checks me use hota hai.'
   },
   'Binary Tree': {
     definition: 'Binary Tree ek special tree data structure hai jisme har parent node ke maximum 2 children (left child aur right child) ho sakte hain.',
     example: '        10\n       /  \\\n      20   30',
-    code: `struct Node {\n    int data;\n    Node* left;\n    Node* right;\n    Node(int val) {\n        data = val;\n        left = right = NULL;\n    }\n};`,
+    code: `#include <iostream>\nusing namespace std;\n\nstruct Node {\n    int data;\n    Node* left;\n    Node* right;\n    Node(int val) {\n        data = val;\n        left = right = NULL;\n    }\n};\n\nvoid inOrder(Node* root) {\n    if (root == NULL) return;\n    inOrder(root->left);\n    cout << root->data << " ";\n    inOrder(root->right);\n}\n\nint main() {\n    Node* root = new Node(10);\n    root->left = new Node(20);\n    root->right = new Node(30);\n    inOrder(root); // Outputs: 20 10 30\n    return 0;\n}`,
     complexity: 'Traversals Time: O(n) | Space: O(h) where h is height.',
     interview: 'Recursion structures traversal properties analysis, expression trees parsing checks me target standard setup hai.'
   },
@@ -192,7 +193,7 @@ const dsaDetails = {
   'Graph': {
     definition: 'Graph vertices/nodes aur edges collections ka interconnected group coordinate system mapping setup hota hai.',
     example: 'A ---- B\n|      |\nC ---- D',
-    code: `#include <iostream>\n#include <vector>\nusing namespace std;\nint main() {\n    vector<int> adjList[5]; // Adjacency list representation\n    adjList[0].push_back(1);\n    adjList[1].push_back(0);\n    return 0;\n}`,
+    code: `#include <iostream>\n#include <vector>\nusing namespace std;\nint main() {\n    vector<int> adjList[5]; // adjList representation\n    adjList[0].push_back(1);\n    adjList[1].push_back(0);\n    return 0;\n}`,
     complexity: 'Space: O(V + E) Adjacency list representation.',
     interview: 'Router packet flows, social network link representations, route navigation paths, topological sorting networks me standard backbone structures hai.'
   },
@@ -239,26 +240,26 @@ const dsaDetails = {
     interview: 'In-place sorting configurations. Fast cache implementations local system memory sort libraries default configurations me quick sort standard utility uses.'
   },
   'Heap Sort': {
-    definition: 'Heap Sort Max Heap ya Min Heap parameters updates index values sorting logic selection heap elements sort coordinate properties follow karta hai.',
-    code: '// Builds heap structures then extracts maximum roots recursively to construct sorted array indexes.',
+    definition: 'Heap Sort Max Heap ya Min Heap structures data parameters select karke binary tree heap structures algorithms sorting processes complete karta hai.',
+    code: `void heapify(int arr[], int n, int i) {\n    int largest = i;\n    int l = 2 * i + 1;\n    int r = 2 * i + 2;\n    if (l < n && arr[l] > arr[largest]) largest = l;\n    if (r < n && arr[r] > arr[largest]) largest = r;\n    if (largest != i) {\n        swap(arr[i], arr[largest]);\n        heapify(arr, n, largest);\n    }\n}\nvoid heapSort(int arr[], int n) {\n    for (int i = n / 2 - 1; i >= 0; i--) heapify(arr, n, i);\n    for (int i = n - 1; i > 0; i--) {\n        swap(arr[0], arr[i]);\n        heapify(arr, i, 0);\n    }\n}`,
     complexity: 'Time: O(n log n) all cases | Space: O(1) auxiliary.',
     interview: 'Memory space is O(1) auxiliary compared to merge sort. Highly reliable with strict Worst-case bounds.'
   },
   'Recursion': {
-    definition: 'Recursion programming pattern hai jisme function target calculations criteria check logic base coordinates conditions direct execution self parameters updates function call execute run loop structures bypass code execution maps coordinates.',
+    definition: 'Recursion programming pattern hai jisme function target calculations criteria check logic base coordinates conditions direct execution self parameters updates function call execute run loop structures.',
     code: `int factorial(int n) {\n    if (n == 0) return 1; // Base case\n    return n * factorial(n - 1); // Recursive call\n}`,
     complexity: 'Time: O(n) for factorial | Call Stack Space: O(n)',
     interview: 'Ensure base case is correctly defined to prevent stack overflow. Used in trees traversal, backtracking, and divide-and-conquer.'
   },
   'Divide & Conquer': {
     definition: 'Divide and conquer strategy complex problems coordinates divisions recursively divide solve combine check scale algorithms processes uses.',
-    code: '// 1. Divide: Break big problem into smaller sub-problems.\n// 2. Solve: Resolve sub-problems recursively.\n// 3. Combine: Merge sub-problem answers to form final solution.',
+    code: `// Dynamic power exponentiation using Divide & Conquer\ndouble power(double x, int n) {\n    if (n == 0) return 1;\n    double temp = power(x, n / 2);\n    if (n % 2 == 0) return temp * temp;\n    else return x * temp * temp;\n}`,
     complexity: 'Binary splits logic standard log-n time scales parameters indexes.',
     interview: 'Allows parallelism as sub-problems can be solved independently. Binary search, Merge Sort, Quick Sort follow this pattern.'
   },
   'Greedy Algorithms': {
     definition: 'Greedy algorithm har local iteration step state updates parameter comparisons values choice select selections elements optimal coordinates checks validation set maps compile karta hai.',
-    code: '// Examples: Fractional Knapsack, Activity Selection, Huffman Coding, Dijkstra, Kruskal, Prim.\n// Selects locally optimal choices at each step.',
+    code: `#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nstruct Activity { int start, finish; };\nbool activityCompare(Activity s1, Activity s2) { return (s1.finish < s2.finish); }\n\nvoid printMaxActivities(Activity arr[], int n) {\n    sort(arr, arr + n, activityCompare);\n    int i = 0;\n    cout << "(" << arr[i].start << ", " << arr[i].finish << ") ";\n    for (int j = 1; j < n; j++) {\n        if (arr[j].start >= arr[i].finish) {\n            cout << "(" << arr[j].start << ", " << arr[j].finish << ") ";\n            i = j;\n        }\n    }\n}`,
     complexity: 'Often O(n log n) due to sorting requirements.',
     interview: 'Does not always yield globally optimal results (e.g. coin change with arbitrary denoms). Requires optimal substructure property proof.'
   },
@@ -282,43 +283,43 @@ const dsaDetails = {
   },
   'Shortest Path': {
     definition: 'Shortest path algorithms weighted/unweighted node distances minimum costs routes check graph structures checks coordinate calculations path determination algorithms.',
-    code: '// Dijkstra Algorithm for positive weights graph systems.\n// BFS for unweighted shortest path systems.\n// Bellman-Ford for negative weight cycles checks. Floyd-Warshall for all-pair checks.',
+    code: `#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nvoid dijkstra(int src, vector<pair<int, int>> adj[], int V) {\n    vector<int> dist(V, 1e9);\n    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;\n    dist[src] = 0; pq.push({0, src});\n    while(!pq.empty()) {\n        int d = pq.top().first; int u = pq.top().second; pq.pop();\n        for(auto edge : adj[u]) {\n            int v = edge.first; int w = edge.second;\n            if(dist[u] + w < dist[v]) {\n                dist[v] = dist[u] + w;\n                pq.push({dist[v], v});\n            }\n        }\n    }\n}`,
     complexity: 'Dijkstra: O((V + E) log V) using Min-Heap priority queue.',
     interview: 'GPS mapping routing coordinates validation checks, routers packet paths selection, distance minimization parameters.'
   },
   'Minimum Spanning Tree': {
     definition: 'Minimum Spanning Tree weighted graphs spanning elements total weights minimization edges cycles checks trees configurations standard routing.',
-    code: '// MST contains V vertices, V-1 edges without loops.\n// Prim\'s: Start node, add adjacent minimum edge, heap check. O(E log V).\n// Kruskal\'s: Sort edges, disjoint set check, insert nodes. O(E log E).',
+    code: `#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nstruct Edge { int u, v, w; bool operator<(const Edge& other) const { return w < other.w; } };\nint findParent(int i, vector<int>& parent) {\n    if (parent[i] == i) return i;\n    return parent[i] = findParent(parent[i], parent);\n}\nvoid kruskal(vector<Edge>& edges, int V) {\n    sort(edges.begin(), edges.end());\n    vector<int> parent(V);\n    for (int i = 0; i < V; i++) parent[i] = i;\n    int mst_weight = 0;\n    for (auto edge : edges) {\n        int uP = findParent(edge.u, parent); int vP = findParent(edge.v, parent);\n        if (uP != vP) { mst_weight += edge.w; parent[uP] = vP; }\n    }\n}`,
     complexity: 'Kruskal/Prim: O(E log V) or O(E log E).',
     interview: 'Cable connections optimizations, routing lines, electricity grid layout designs, pipelines network setups.'
   },
   'Time Complexity': {
     definition: 'Time complexity input data collections scale size growth rates variables calculations checks loop counts operations compile time execution logic scales check.',
-    code: `for (int i = 0; i < n; i++) {\n    // O(n) Time execution loop\n}`,
+    code: `// Linear Loop has time complexity O(N)\nfor (int i = 0; i < n; i++) {\n    // executes N times\n}\n\n// Nested loops has quadratic complexity O(N^2)\nfor (int i = 0; i < n; i++) {\n    for (int j = 0; j < n; j++) {\n        // executes N^2 times\n    }\n}`,
     complexity: 'Scales O(1) → O(log n) → O(n) → O(n log n) → O(n²) → O(2^n)',
     interview: 'Interviewers hamesha alternative code updates optimization paths comparisons benchmarks checking time complexity minimize require metrics validation checks code performance target validation.'
   },
   'Space Complexity': {
     definition: 'Space complexity checks memory requirements runtime extra buffers maps variables temporary allocations check scales configurations arrays sizes growth coordinates.',
-    code: `int arr[n]; // allocates O(n) extra space`,
+    code: `int arr[n]; // allocates O(n) extra auxiliary space in stack frame`,
     complexity: 'O(1) Auxiliary Space means algorithm uses constant memory space regardless of inputs scale size.',
     interview: 'Space vs Time tradeoffs. In-place algorithms space limits checks constraints optimizations memory devices systems level code limits.'
   },
   'Big-O Notation': {
     definition: 'Big-O notation algorithm upper bound growth behavior worst case complexity limit representation scale notation system functions.',
-    code: '// Worst-case upper bound runtime growth representation notation.',
-    complexity: 'Indicates worst possible execution time growth.',
+    code: `// linear search worst case is index N, so represented as O(N)\n// binary search worst case is logarithmic, so represented as O(log N)`,
+    complexity: 'Indicates worst possible execution time growth bounds.',
     interview: 'Big-O checks worst possible code runtime growth bounds safety checks software execution maximum timeouts validations.'
   },
   'Big-Omega Notation': {
     definition: 'Big-Omega notation lower bound growth behavior best case runtime optimization minimum iterations limits representation notation.',
-    code: '// Best-case lower bound runtime growth representation notation.',
+    code: `// linear search best case is at index 0, so represented as Omega(1)`,
     complexity: 'Indicates best possible execution time growth.',
     interview: 'Algorithm best case checks baseline operations execution checks loops bypass evaluations.'
   },
   'Big-Theta Notation': {
     definition: 'Big-Theta notation exact tight bound growth behavior represents exact average time scaling behavior checks functions boundaries.',
-    code: '// Tight bound exact runtime growth boundaries representation.',
+    code: `// simple loop executing exactly N times is Theta(N)`,
     complexity: 'Represents exact average/tight asymptotic runtime scaling behavior.',
     interview: 'Tight bounds checking validations software execution exact profiling estimations benchmarks.'
   },
@@ -418,16 +419,19 @@ const dsaDetails = {
   },
   'Association': {
     definition: 'General dynamic connection relationship between two independent classes.',
-    code: 'class Teacher {};\nclass Student {};\n// General relationship links without ownership boundaries.',
+    example: 'Teacher teaches Student. Both can exist independently.',
+    code: `class Student {};\nclass Teacher {\n    vector<Student*> students; // Association link\n};`,
     interview: 'Represents a general link. One object uses services of another.'
   },
   'Aggregation': {
     definition: 'Weak has-a relationship between parent class and child class where child can exist independently if parent is destroyed.',
+    example: 'Department has Teachers. If Department is deleted, Teachers still exist.',
     code: `class Teacher {};\nclass Department {\n    Teacher* t; // reference/pointer (weak link)\npublic:\n    Department(Teacher* teacher) { t = teacher; }\n};`,
     interview: 'Aggregation is a weak relationship. Life cycle of child is independent of parent.'
   },
   'Composition': {
     definition: 'Strong has-a relationship where child lifecycle is tightly coupled with parent. Deleting parent deletes child.',
+    example: 'Car has Engine. If Car is destroyed, Engine is also destroyed.',
     code: `class Engine {};\nclass Car {\n    Engine e; // direct member ownership (strong link)\n};`,
     interview: 'Composition is a strong relationship. Child cannot exist without the parent.'
   },
@@ -552,12 +556,12 @@ const dsaDetails = {
   },
   'Stored Procedures': {
     definition: 'Stored SQL queries modules database execution routines calls setups.',
-    code: `// Callable procedures executing structured DB queries.\nCALL GetActiveStudents();`,
+    code: `DELIMITER //\nCREATE PROCEDURE GetEmployeeSalary(IN empId INT, OUT empSalary DECIMAL(10,2))\nBEGIN\n    SELECT salary INTO empSalary FROM Employee WHERE id = empId;\nEND //\nDELIMITER ;`,
     interview: 'Pre-compiled SQL queries. Reduces network traffic and increases execution speed.'
   },
   'Triggers': {
     definition: 'Trigger SQL blocks automatically fired on specific database events like INSERT, UPDATE, DELETE.',
-    code: `CREATE TRIGGER log_insert AFTER INSERT ON Student\nFOR EACH ROW INSERT INTO StudentLog VALUES (NEW.id);`,
+    code: `CREATE TRIGGER update_stock AFTER INSERT ON OrderItems\nFOR EACH ROW\nBEGIN\n    UPDATE Products SET stock = stock - NEW.quantity WHERE id = NEW.product_id;\nEND;`,
     interview: 'Maintains database referential integrity, auditing, and logging constraints automatically.'
   },
   'Normalization': {
@@ -607,7 +611,7 @@ const dsaDetails = {
   },
 
   // ==========================================
-  // ================= PART 3 — OS ==============
+  // ================= PART 5 — OS ==============
   // ==========================================
   'Operating System': {
     definition: 'Operating System system software interface coordinating hardware components applications resources.',
@@ -620,7 +624,7 @@ const dsaDetails = {
   },
   'System Calls': {
     definition: 'API system interfaces applications OS kernel services request operations.',
-    code: '// Standard calls: fork(), open(), read(), write(), close(), wait().',
+    code: `#include <unistd.h>\n#include <sys/types.h>\n#include <iostream>\nusing namespace std;\n\nint main() {\n    pid_t p = fork(); // fork() is a system call to create child process\n    if (p < 0) cout << "Fork failed\\n";\n    else if (p == 0) cout << "Child process\\n";\n    else cout << "Parent process\\n";\n    return 0;\n}`,
     interview: 'The interface between user application code and the privileged kernel mode operations.'
   },
   'User Mode vs Kernel Mode': {
@@ -634,6 +638,7 @@ const dsaDetails = {
   },
   'Program vs Process': {
     definition: 'Program passive binary code stored on disk vs Process active execution unit loaded in RAM.',
+    code: `// A simple compiled binary executable on disk is a program.\n// When executing, OS creates a PCB block and allocates memory heap/stack which represents the active Process.`,
     interview: 'Program is passive (passive set of instructions on disk), Process is active (currently in execution).'
   },
   'Process States': {
@@ -696,7 +701,7 @@ const dsaDetails = {
   },
   'Semaphore': {
     definition: 'Signaling and counting synchronization variable coordinating resource limits.',
-    code: `// wait() / P() decrements semaphore\n// signal() / V() increments semaphore`,
+    code: `#include <iostream>\n#include <thread>\n#include <mutex>\n#include <condition_variable>\nusing namespace std;\n\nclass Semaphore {\n    int count;\n    mutex mtx;\n    condition_variable cv;\npublic:\n    Semaphore(int c) { count = c; }\n    void wait() {\n        unique_lock<mutex> lock(mtx);\n        while (count == 0) cv.wait(lock);\n        count--;\n    }\n    void signal() {\n        unique_lock<mutex> lock(mtx);\n        count++;\n        cv.notify_one();\n    }\n};`,
     interview: 'Counting Semaphore (coordinates N resources) vs Binary Semaphore (0/1, behaves like mutex but no ownership constraint).'
   },
   'Monitor': {
@@ -722,7 +727,7 @@ const dsaDetails = {
   },
   'Banker\'s Algorithm': {
     definition: 'Deadlock avoidance safe sequence algorithm evaluating resource demands.',
-    code: `// Need = Max - Allocation\n// Checks if safe sequence exists for allocation.`,
+    code: `#include <iostream>\n#include <vector>\nusing namespace std;\n\nbool isSafe(int processes[], int avail[], int max[][3], int allot[][3], int P, int R) {\n    int need[5][3];\n    for (int i = 0 ; i < P ; i++)\n        for (int j = 0 ; j < R ; j++)\n            need[i][j] = max[i][j] - allot[i][j];\n    vector<bool> finish(P, false); int work[3];\n    for (int i = 0; i < R; i++) work[i] = avail[i];\n    while (true) {\n        bool found = false;\n        for (int p = 0; p < P; p++) {\n            if (!finish[p]) {\n                int j;\n                for (j = 0; j < R; j++) if (need[p][j] > work[j]) break;\n                if (j == R) {\n                    for (int k = 0 ; k < R ; k++) work[k] += allot[p][k];\n                    finish[p] = true; found = true;\n                }\n            }\n        }\n        if (!found) break;\n    }\n    for (int i = 0; i < P; i++) if (!finish[i]) return false;\n    return true;\n}`,
     interview: 'Uses Allocation, Max, Available matrices to verify if allocating resources keeps system safe.'
   },
   'Deadlock Detection': {
@@ -771,10 +776,12 @@ const dsaDetails = {
   },
   'File Allocation': {
     definition: 'Mapping file blocks to disk sectors: Contiguous, Linked, or Indexed.',
+    example: '1. Contiguous: fast sequential reads. 2. Linked: pointers chain. 3. Indexed: index directory block.',
     interview: 'Contiguous (fast, external fragmentation), Linked (no fragmentation, slow access), Indexed (uses index blocks).'
   },
   'Disk Scheduling': {
     definition: 'Ordering disk read/write requests to minimize cylinder seek time.',
+    example: 'FCFS: Processes requests in arriving order. SCAN: Sweeps back and forth like an elevator.',
     interview: 'Algorithms: FCFS, SSTF (shortest seek time first), SCAN (elevator algorithm), C-SCAN, LOOK, C-LOOK.'
   },
 
@@ -796,7 +803,8 @@ const dsaDetails = {
   },
   'OSI Model Layers': {
     definition: '7-Layer Open Systems Interconnection model mapping network communications.',
-    interview: 'Application, Presentation, Session, Transport, Network, Data Link, Physical. (All People Seem To Need Data Processing).'
+    example: 'Mnemonic: All People Seem To Need Data Processing\n7. Application | 6. Presentation | 5. Session | 4. Transport | 3. Network | 2. Data Link | 1. Physical',
+    interview: 'Standard framework for understanding network transport layers.'
   },
   'Physical Layer': {
     definition: 'First OSI layer transmitting raw bits over physical mediums.',
@@ -828,7 +836,8 @@ const dsaDetails = {
   },
   'TCP/IP Model': {
     definition: '4-Layer network architecture model: Application, Transport, Internet, Network Access.',
-    interview: 'Application (OSI 5,6,7), Transport (OSI 4), Internet (OSI 3), Network Access (OSI 1,2).'
+    example: 'Application (OSI 5,6,7) → Transport (OSI 4) → Internet (OSI 3) → Network Access (OSI 1,2)',
+    interview: 'TCP/IP Model is the actual implementation of network layers on the Internet.'
   },
   'HTTP': {
     definition: 'HyperText Transfer Protocol web client-server communications.',
@@ -898,7 +907,7 @@ const dsaDetails = {
   },
   'TCP Connection Establishment': {
     definition: '3-way handshake establishing reliable TCP connection between client and server.',
-    example: '1. SYN (Client) → 2. SYN-ACK (Server) → 3. ACK (Client)',
+    example: '1. SYN (Client Request) ---->\n2. <---- SYN-ACK (Server Respond)\n3. ACK (Client Confirm) ---->',
     interview: 'SYN (synchronize sequence numbers), SYN-ACK (acknowledge and sync back), ACK (confirm connection).'
   },
   'HTTP Request-Response Cycle': {
