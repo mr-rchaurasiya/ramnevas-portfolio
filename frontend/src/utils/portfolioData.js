@@ -146,7 +146,8 @@ export const portfolioData = {
       title: "5-Star Coding Badge",
       award: "C and C++ Proficiency",
       details: "Awarded top skill rank stars for structural programming and problem-solving in C and C++.",
-      icon: "bi-award"
+      icon: "bi-award",
+      url: "https://www.hackerrank.com/profile/ramnevas81889"
     }
   ]
 };

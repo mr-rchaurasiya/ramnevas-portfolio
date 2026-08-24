@@ -32,9 +32,9 @@ const Achievements = () => {
               </div>
             </div>
           ) : (
-            achievements.map((ach, index) => (
-              <div className="col-md-5" key={index}>
-                <div className="card-glass p-4 h-100 text-center d-flex flex-column align-items-center">
+            achievements.map((ach, index) => {
+              const cardContent = (
+                <div className="card-glass p-4 h-100 text-center d-flex flex-column align-items-center hover-lift cursor-pointer">
                   <div className="bg-gradient-accent rounded-circle p-3 text-white mb-4 d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px' }}>
                     <i className={`bi ${ach.icon || 'bi-trophy'} fs-3`}></i>
                   </div>
@@ -42,8 +42,28 @@ const Achievements = () => {
                   {ach.award && <h4 className="small text-gradient fw-bold text-uppercase tracking-wider mb-3">{ach.award}</h4>}
                   <p className="text-muted small mb-0 mt-auto">{ach.details || ach.description}</p>
                 </div>
-              </div>
-            ))
+              );
+
+              // Support both backend/fallback fields or hardcoded check for HackerRank
+              const targetUrl = ach.url || (ach.title === "5-Star Coding Badge" ? "https://www.hackerrank.com/profile/ramnevas81889" : null);
+
+              return (
+                <div className="col-md-5" key={index}>
+                  {targetUrl ? (
+                    <a 
+                      href={targetUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-decoration-none d-block h-100"
+                    >
+                      {cardContent}
+                    </a>
+                  ) : (
+                    cardContent
+                  )}
+                </div>
+              );
+            })
           )}
         </div>
       </div>
