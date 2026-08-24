@@ -40,7 +40,7 @@ const Achievements = () => {
                   </div>
                   <h3 className="h5 text-white fw-bold mb-2">{ach.title}</h3>
                   {ach.award && <h4 className="small text-gradient fw-bold text-uppercase tracking-wider mb-3">{ach.award}</h4>}
-                  <p className="text-muted small mb-0 mt-auto">{ach.details || ach.description}</p>
+                  <p className="text-white-50 small mb-0 mt-auto">{ach.details || ach.description}</p>
                 </div>
               );
 

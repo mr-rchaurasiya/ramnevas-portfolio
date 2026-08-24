@@ -25,7 +25,7 @@ const Resume = () => {
               <h3 className="h4 text-white fw-bold mb-3">Ramnevas Chaurasiya - CV</h3>
               
               {/* Short Professional Description */}
-              <p className="text-muted mb-4 leading-relaxed small">
+              <p className="text-white-50 mb-4 leading-relaxed" style={{ fontSize: '0.9rem' }}>
                 Download my comprehensive resume to explore my B.Tech in CS & IT credentials, technical toolkit (C++, JavaScript, React, Node.js, Flutter), development experience, and algorithmic capabilities.
               </p>
               
@@ -40,8 +40,9 @@ const Resume = () => {
                   <i className="bi bi-download me-2"></i> Download Resume
                 </a>
               ) : (
-                <div className="p-3 bg-dark bg-opacity-20 border border-white-10 rounded-3 text-center d-inline-block mx-auto text-muted small">
-                  <i className="bi bi-info-circle me-2 text-info"></i> Resume is currently not uploaded. Please contact the administrator or check back soon!
+                <div className="p-3 rounded-3 text-center d-inline-block mx-auto border" style={{ background: 'rgba(255, 193, 7, 0.08)', borderColor: 'rgba(255, 193, 7, 0.25)', color: '#ffe082' }}>
+                  <i className="bi bi-info-circle-fill me-2 text-warning"></i> 
+                  <span className="small font-monospace">Resume is currently not uploaded. Please contact the administrator or check back soon!</span>
                 </div>
               )}
               
