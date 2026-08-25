@@ -101,8 +101,8 @@ export const portfolioData = {
       technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Bootstrap 5"],
       github: "https://github.com/mr-rchaurasiya/CareerFlow",
       githubUrl: "https://github.com/mr-rchaurasiya/CareerFlow",
-      live: "https://github.com/mr-rchaurasiya/CareerFlow",
-      liveUrl: "https://github.com/mr-rchaurasiya/CareerFlow"
+      live: "",
+      liveUrl: ""
     },
     {
       title: "PulseMD Doctor Portal",
@@ -112,8 +112,8 @@ export const portfolioData = {
       technologies: ["Flutter", "Dart", "WebRTC", "WebSocket", "ChangeNotifier"],
       github: "https://github.com/mr-rchaurasiya/doctor_webrtc_app",
       githubUrl: "https://github.com/mr-rchaurasiya/doctor_webrtc_app",
-      live: "https://github.com/mr-rchaurasiya/doctor_webrtc_app",
-      liveUrl: "https://github.com/mr-rchaurasiya/doctor_webrtc_app"
+      live: "",
+      liveUrl: ""
     },
     {
       title: "TeleHealth Application",
@@ -123,8 +123,8 @@ export const portfolioData = {
       technologies: ["Flutter", "Dart", "WebRTC", "WebSocket", "Local Auth"],
       github: "https://github.com/mr-rchaurasiya/tele-health",
       githubUrl: "https://github.com/mr-rchaurasiya/tele-health",
-      live: "https://github.com/mr-rchaurasiya/tele-health",
-      liveUrl: "https://github.com/mr-rchaurasiya/tele-health"
+      live: "",
+      liveUrl: ""
     },
     {
       title: "Google Clone",
@@ -134,8 +134,8 @@ export const portfolioData = {
       technologies: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "REST APIs"],
       github: "https://github.com/mr-rchaurasiya/google-clone",
       githubUrl: "https://github.com/mr-rchaurasiya/google-clone",
-      live: "https://github.com/mr-rchaurasiya/google-clone",
-      liveUrl: "https://github.com/mr-rchaurasiya/google-clone"
+      live: "",
+      liveUrl: ""
     },
     {
       title: "Chat Application",
@@ -145,8 +145,8 @@ export const portfolioData = {
       technologies: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
       github: "https://github.com/mr-rchaurasiya/chatting-Application",
       githubUrl: "https://github.com/mr-rchaurasiya/chatting-Application",
-      live: "https://github.com/mr-rchaurasiya/chatting-Application",
-      liveUrl: "https://github.com/mr-rchaurasiya/chatting-Application"
+      live: "",
+      liveUrl: ""
     },
     {
       title: "OOP C++ Calculator",
@@ -156,8 +156,8 @@ export const portfolioData = {
       technologies: ["C++", "OOP", "Algorithms", "Command Line"],
       github: "https://github.com/mr-rchaurasiya/calculator",
       githubUrl: "https://github.com/mr-rchaurasiya/calculator",
-      live: "https://github.com/mr-rchaurasiya/calculator",
-      liveUrl: "https://github.com/mr-rchaurasiya/calculator"
+      live: "",
+      liveUrl: ""
     },
     {
       title: "Markdown Resume Generator",
@@ -167,8 +167,8 @@ export const portfolioData = {
       technologies: ["HTML", "CSS", "Markdown", "Design"],
       github: "https://github.com/mr-rchaurasiya/resume",
       githubUrl: "https://github.com/mr-rchaurasiya/resume",
-      live: "https://github.com/mr-rchaurasiya/resume",
-      liveUrl: "https://github.com/mr-rchaurasiya/resume"
+      live: "",
+      liveUrl: ""
     },
     {
       title: "MERN Developer Portfolio",

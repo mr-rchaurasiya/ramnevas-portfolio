@@ -28,7 +28,7 @@ const seedData = async () => {
         description: "A modern Job Application Tracker with JWT authentication, a responsive glassmorphic dashboard, search/filter capabilities, and a hybrid database adapter that falls back seamlessly to local JSON file storage if MongoDB is offline.",
         technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Bootstrap 5"],
         githubUrl: "https://github.com/mr-rchaurasiya/CareerFlow",
-        liveUrl: "https://github.com/mr-rchaurasiya/CareerFlow",
+        liveUrl: "",
         image: ""
       },
       {
@@ -36,7 +36,7 @@ const seedData = async () => {
         description: "A high-fidelity, responsive Doctor Portal built in Flutter featuring secure authentication, clinical dashboard stats, diagnostic session notes, and optimized serverless WebRTC P2P video consultation.",
         technologies: ["Flutter", "Dart", "WebRTC", "WebSocket", "ChangeNotifier"],
         githubUrl: "https://github.com/mr-rchaurasiya/doctor_webrtc_app",
-        liveUrl: "https://github.com/mr-rchaurasiya/doctor_webrtc_app",
+        liveUrl: "",
         image: ""
       },
       {
@@ -44,7 +44,7 @@ const seedData = async () => {
         description: "A Flutter-based tele-health doctor application featuring a complete doctor workflow: local authentication, appointment details, peer-to-peer WebRTC video calling with a standalone Dart WebSocket signaling server.",
         technologies: ["Flutter", "Dart", "WebRTC", "WebSocket", "Local Auth"],
         githubUrl: "https://github.com/mr-rchaurasiya/tele-health",
-        liveUrl: "https://github.com/mr-rchaurasiya/tele-health",
+        liveUrl: "",
         image: ""
       },
       {
@@ -52,7 +52,7 @@ const seedData = async () => {
         description: "Developed a Google Search clone using Flutter and Dart with Firebase, Cloud Firestore and REST APIs.",
         technologies: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "REST APIs"],
         githubUrl: "https://github.com/mr-rchaurasiya/google-clone",
-        liveUrl: "https://github.com/mr-rchaurasiya/google-clone",
+        liveUrl: "",
         image: ""
       },
       {
@@ -60,7 +60,7 @@ const seedData = async () => {
         description: "Developed a real-time chat application using Flutter and Dart with Firebase Authentication and Cloud Firestore.",
         technologies: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
         githubUrl: "https://github.com/mr-rchaurasiya/chatting-Application",
-        liveUrl: "https://github.com/mr-rchaurasiya/chatting-Application",
+        liveUrl: "",
         image: ""
       },
       {
@@ -68,7 +68,7 @@ const seedData = async () => {
         description: "A high-performance calculator tool written in C++ showcasing object-oriented principles, modular calculations, and basic arithmetic.",
         technologies: ["C++", "OOP", "Algorithms", "Command Line"],
         githubUrl: "https://github.com/mr-rchaurasiya/calculator",
-        liveUrl: "https://github.com/mr-rchaurasiya/calculator",
+        liveUrl: "",
         image: ""
       },
       {
@@ -76,7 +76,7 @@ const seedData = async () => {
         description: "An amazing way to write your resume in markdown with complete customization through CSS stylesheets.",
         technologies: ["HTML", "CSS", "Markdown", "Design"],
         githubUrl: "https://github.com/mr-rchaurasiya/resume",
-        liveUrl: "https://github.com/mr-rchaurasiya/resume",
+        liveUrl: "",
         image: ""
       },
       {
