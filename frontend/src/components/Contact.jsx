@@ -54,38 +54,46 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      let response;
+      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname.includes('192.168.');
+
+      if (isLocalhost) {
+        // Local: Submit to local Express backend
+        response = await fetch(`${API_BASE_URL}/contact`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+      } else {
+        // Production: Submit to FormSubmit.co AJAX endpoint to bypass offline backend issues
+        response = await fetch(`https://formsubmit.co/ajax/${email}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            Name: formData.name,
+            Email: formData.email,
+            Subject: formData.subject,
+            Message: formData.message,
+            _subject: `Portfolio Contact Form: ${formData.subject || 'New Message'}`
+          }),
+        });
+      }
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Something went wrong. Please try again.');
+        throw new Error(data.message || 'Submission failed. Please try again.');
       }
 
-      setSuccessMsg(data.message || 'Your message has been sent successfully!');
+      setSuccessMsg('Your message has been sent successfully!');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      const isNetworkError = error.message.toLowerCase().includes('fetch') || 
-                             error.message.toLowerCase().includes('network') ||
-                             error.message.toLowerCase().includes('failed');
-      
-      if (isNetworkError) {
-        setErrorMsg('Server offline. Redirecting you to WhatsApp to send your message directly...');
-        setTimeout(() => {
-          const whatsappText = encodeURIComponent(
-            `Hi Ramnevas, my name is ${formData.name}. \n*Subject*: ${formData.subject} \n*Email*: ${formData.email} \n*Message*: ${formData.message}`
-          );
-          window.open(`https://wa.me/917830911201?text=${whatsappText}`, '_blank');
-        }, 1500);
-      } else {
-        setErrorMsg(error.message);
-      }
+      setErrorMsg(error.message || 'Something went wrong. Please try again.');
     } finally {
       setLoading(false);
     }
