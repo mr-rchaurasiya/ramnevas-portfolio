@@ -36,7 +36,7 @@ const Projects = () => {
           ) : (
             projects.map((project, index) => (
               <div className="col-md-6" key={index}>
-                <div className="card-glass p-4 h-100 d-flex flex-column justify-content-between">
+                <div className="card-glass p-4 h-100 d-flex flex-column justify-content-between hover-lift hover-glow">
                   <div>
                     <div className="d-flex justify-content-between align-items-start mb-3">
                       <span className="badge bg-dark border-1 text-gradient border-white-10 text-uppercase tracking-wider small fw-semibold px-3 py-2" style={{ border: '1px solid rgba(255,255,255,0.08)', fontSize: '0.75rem' }}>

@@ -35,7 +35,7 @@ const Achievements = () => {
           ) : (
             achievements.map((ach, index) => {
               const cardContent = (
-                <div className="card-glass p-4 h-100 text-center d-flex flex-column align-items-center hover-lift cursor-pointer">
+                <div className="card-glass p-4 h-100 text-center d-flex flex-column align-items-center hover-lift hover-glow cursor-pointer">
                   <div className="bg-gradient-accent rounded-circle p-3 text-white mb-4 d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px' }}>
                     <i className={`bi ${ach.icon || 'bi-trophy'} fs-3`}></i>
                   </div>
