@@ -71,7 +71,21 @@ const Contact = () => {
       setSuccessMsg(data.message || 'Your message has been sent successfully!');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      setErrorMsg(error.message);
+      const isNetworkError = error.message.toLowerCase().includes('fetch') || 
+                             error.message.toLowerCase().includes('network') ||
+                             error.message.toLowerCase().includes('failed');
+      
+      if (isNetworkError) {
+        setErrorMsg('Server offline. Redirecting you to WhatsApp to send your message directly...');
+        setTimeout(() => {
+          const whatsappText = encodeURIComponent(
+            `Hi Ramnevas, my name is ${formData.name}. \n*Subject*: ${formData.subject} \n*Email*: ${formData.email} \n*Message*: ${formData.message}`
+          );
+          window.open(`https://wa.me/917830911201?text=${whatsappText}`, '_blank');
+        }, 1500);
+      } else {
+        setErrorMsg(error.message);
+      }
     } finally {
       setLoading(false);
     }
