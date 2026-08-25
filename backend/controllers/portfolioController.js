@@ -446,12 +446,14 @@ ${message}`;
       </div>
     `;
 
-    // Send email alert (warns gracefully if credentials aren't set)
-    await sendEmail({
+    // Send email alert asynchronously in the background to avoid blocking the response
+    sendEmail({
       from: { name, email },
       subject,
       text: textContent,
       html: htmlContent,
+    }).catch((err) => {
+      console.error(`[Background Email Error]: ${err.message}`);
     });
 
     res.status(200).json({ success: true, message: 'Message validated and received successfully!' });

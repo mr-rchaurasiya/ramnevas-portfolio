@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+// Determine the API base URL dynamically to support local network mobile testing
+const getApiBaseUrl = () => {
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL;
+  }
+  const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
+  return `http://${hostname}:5000/api`;
+};
+
+export const API_BASE_URL = getApiBaseUrl();
 
 /**
  * Helper function to fetch data from Express backend
@@ -36,7 +45,15 @@ export const useFetchData = (endpoint, fallbackData) => {
       try {
         const result = await fetchPortfolioData(endpoint);
         if (isMounted) {
-          setData(result);
+          const isEmpty = !result || 
+                          (Array.isArray(result) && result.length === 0) ||
+                          (typeof result === 'object' && Object.keys(result).length === 0);
+          
+          if (isEmpty) {
+            setData(fallbackData);
+          } else {
+            setData(result);
+          }
           setError(null);
         }
       } catch (err) {

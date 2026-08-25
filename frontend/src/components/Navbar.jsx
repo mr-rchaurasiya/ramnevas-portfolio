@@ -15,7 +15,7 @@ const Navbar = () => {
       }
 
       // Check which section is in view
-      const sections = ['hero', 'about', 'skills', 'experience', 'education', 'projects', 'achievements', 'resume', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'experience', 'education', 'projects', 'achievements', 'hobbies', 'resume', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -79,6 +79,7 @@ const Navbar = () => {
               { id: 'education', label: 'Education' },
               { id: 'projects', label: 'Projects' },
               { id: 'achievements', label: 'Achievements' },
+              { id: 'hobbies', label: 'Sports Analysis' },
               { id: 'resume', label: 'Resume' },
               { id: 'contact', label: 'Contact' }
             ].map((item) => (

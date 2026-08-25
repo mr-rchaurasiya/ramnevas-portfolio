@@ -3,10 +3,14 @@ export const portfolioData = {
     name: "Ramnevas Chaurasiya",
     title: "Full Stack Developer",
     degreeShort: "B.Tech in CS & IT",
-    email: "ramnevas@example.com", // standard placeholder
+    email: "ramnevas8188@gmail.com",
     location: "Maharajganj, Uttar Pradesh, India",
-    linkedin: "linkedin.com/in/ramnevas-chaurasiya",
+    locationUrl: "https://maps.app.goo.gl/Znx5tn3AK6Go8kvH7",
+    linkedin: "linkedin.com/in/ramnevas-chaurasiya-09700a208",
     github: "github.com/ramnevas",
+    instagram: "instagram.com/mr_rchaurasiya",
+    phone: "+91 8188948708",
+    whatsapp: "+91 7830911201",
     aboutSummary: "I am a Full Stack Developer specialized in building high-performance web applications. I focus on creating clean user interfaces backed by structured server architectures and optimized databases.",
     aboutDetails: "I hold a B.Tech in Computer Science & Information Technology from Mahatma Jyotiba Phule Rohilkhand University. I specialize in the React, Node.js, and Express.js ecosystem, with experience in database architectures like MongoDB and PHP development. I am passionate about core computer science concepts and mobile application engineering using Flutter."
   },
@@ -103,11 +107,22 @@ export const portfolioData = {
     {
       title: "PulseMD Doctor Portal",
       category: "mobile",
-      description: "A responsive clinical doctor portal featuring secure authentication, clinical dashboard stats, diagnostic session notes, and serverless WebRTC P2P video consultation.",
+      description: "A high-fidelity, responsive Doctor Portal built in Flutter featuring secure authentication, clinical dashboard stats, diagnostic session notes, and optimized serverless WebRTC P2P video consultation.",
       tags: ["Flutter", "Dart", "WebRTC", "WebSocket", "ChangeNotifier"],
       technologies: ["Flutter", "Dart", "WebRTC", "WebSocket", "ChangeNotifier"],
       github: "https://github.com/mr-rchaurasiya/doctor_webrtc_app",
       githubUrl: "https://github.com/mr-rchaurasiya/doctor_webrtc_app",
+      live: "",
+      liveUrl: ""
+    },
+    {
+      title: "TeleHealth Application",
+      category: "mobile",
+      description: "A Flutter-based tele-health doctor application featuring a complete doctor workflow: local authentication, appointment details, peer-to-peer WebRTC video calling with a standalone Dart WebSocket signaling server.",
+      tags: ["Flutter", "Dart", "WebRTC", "WebSocket", "Local Auth"],
+      technologies: ["Flutter", "Dart", "WebRTC", "WebSocket", "Local Auth"],
+      github: "https://github.com/mr-rchaurasiya/tele-health",
+      githubUrl: "https://github.com/mr-rchaurasiya/tele-health",
       live: "",
       liveUrl: ""
     },
@@ -132,6 +147,39 @@ export const portfolioData = {
       githubUrl: "https://github.com/mr-rchaurasiya/chatting-Application",
       live: "",
       liveUrl: ""
+    },
+    {
+      title: "OOP C++ Calculator",
+      category: "other",
+      description: "A high-performance calculator tool written in C++ showcasing object-oriented principles, modular calculations, and basic arithmetic.",
+      tags: ["C++", "OOP", "Algorithms", "Command Line"],
+      technologies: ["C++", "OOP", "Algorithms", "Command Line"],
+      github: "https://github.com/mr-rchaurasiya/calculator",
+      githubUrl: "https://github.com/mr-rchaurasiya/calculator",
+      live: "",
+      liveUrl: ""
+    },
+    {
+      title: "Markdown Resume Generator",
+      category: "web",
+      description: "An amazing way to write your resume in markdown with complete customization through CSS stylesheets.",
+      tags: ["HTML", "CSS", "Markdown", "Design"],
+      technologies: ["HTML", "CSS", "Markdown", "Design"],
+      github: "https://github.com/mr-rchaurasiya/resume",
+      githubUrl: "https://github.com/mr-rchaurasiya/resume",
+      live: "",
+      liveUrl: ""
+    },
+    {
+      title: "MERN Developer Portfolio",
+      category: "web",
+      description: "This MERN stack developer portfolio featuring interactive computer science core concept study guides, clean color contrasts, and automated SMTP Nodemailer contact form notifications.",
+      tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Nodemailer", "Vercel"],
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Nodemailer", "Vercel"],
+      github: "https://github.com/mr-rchaurasiya/ramnevas-portfolio",
+      githubUrl: "https://github.com/mr-rchaurasiya/ramnevas-portfolio",
+      live: "https://ramnevas-portfolio.vercel.app/",
+      liveUrl: "https://ramnevas-portfolio.vercel.app/"
     }
   ],
   
@@ -149,5 +197,84 @@ export const portfolioData = {
       icon: "bi-award",
       url: "https://www.hackerrank.com/profile/ramnevas81889"
     }
-  ]
+  ],
+
+  hobbies: {
+    cricket: {
+      title: "Cricket & Sports Analysis",
+      subtitle: "Click on any section below to explore the tactical insights, rules, and lessons from cricket",
+      icon: "bi-dribbble",
+      subparts: [
+        {
+          id: "formats_strategy",
+          title: "Formats & Strategy",
+          icon: "bi-lightning-fill",
+          badge: "T20 | IPL | ODI | Test",
+          introduction: "Comparing limited-overs dynamics (T20 & ODI) against the traditional 5-day Test format, highlighting how batting pace and bowling tactics shift.",
+          sections: [
+            {
+              title: "T20 & IPL Franchise",
+              items: [
+                { term: "T20 Dynamics", desc: "20 overs (120 balls). Focuses on powerplay aggression, death overs (16-20), bowling variations, and quick scoring." },
+                { term: "IPL Franchise Competition", desc: "T20 league with city franchises, player auctions, and tactical rules like the Impact Player substitution." }
+              ]
+            },
+            {
+              title: "ODI & Test Match Tactics",
+              items: [
+                { term: "ODI (One Day)", desc: "50 overs (300 balls). Focuses on partnership building, strike rotation in middle overs, and pacing run-chases." },
+                { term: "Test Cricket", desc: "Up to 5 days, 2 innings per team. Focuses on patience, defensive technique, session management, and declarations." }
+              ]
+            }
+          ]
+        },
+        {
+          id: "rules_dismissals",
+          title: "Rules & Dismissals",
+          icon: "bi-gear-fill",
+          badge: "Laws, Extras & Wickets",
+          introduction: "Exploring the fundamental rules of deliveries, extras, dismissal methods, and modern technology utilized in the game.",
+          sections: [
+            {
+              title: "Extras & Deliveries",
+              items: [
+                { term: "Overs & Extras", desc: "An over consists of 6 legal balls. Extras include Wides, No-Balls (triggers Free Hit), Byes, and Leg Byes." },
+                { term: "DRS Technology", desc: "Decision Review System using Ball Tracking (for LBW trajectory) and UltraEdge (for bat-ball audio spikes)." }
+              ]
+            },
+            {
+              title: "Dismissal Methods (Wickets)",
+              items: [
+                { term: "Top Dismissals", desc: "Bowled (hitting stumps), Caught (fielding catch), and LBW (Leg Before Wicket, blocking ball headed to stumps)." },
+                { term: "Active Field Dismissals", desc: "Run Out (breaking wickets while running) and Stumped (keeper dislodging bails when batsman is out of crease)." }
+              ]
+            }
+          ]
+        },
+        {
+          id: "insights_teamwork",
+          title: "Insights & Teamwork",
+          icon: "bi-lightbulb-fill",
+          badge: "Leadership & Tech Analogy",
+          introduction: "How cricket strategies connect to leadership, teamwork, and key problem-solving traits useful in software engineering.",
+          sections: [
+            {
+              title: "Leadership & Tactics",
+              items: [
+                { term: "Captaincy Duties", desc: "Responsible for field placement, bowling changes, selecting the Playing XI, and analyzing batsman weaknesses." },
+                { term: "Adapting to Situations", desc: "Planning strategies according to pitch deterioration, weather conditions, and batsman partnerships." }
+              ]
+            },
+            {
+              title: "Software Engineering Analogy",
+              items: [
+                { term: "Patience & Debugging", desc: "Test cricket teaches us patience and session planning. This connects to resolving complex, deeply rooted software bugs." },
+                { term: "Team Collaboration", desc: "Like batting partnerships, software development relies on collective collaboration and supporting teammates under pressure." }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
 };

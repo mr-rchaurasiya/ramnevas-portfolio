@@ -6,6 +6,7 @@ import Experience from '../components/Experience';
 import Education from '../components/Education';
 import Projects from '../components/Projects';
 import Achievements from '../components/Achievements';
+import Hobbies from '../components/Hobbies';
 import Resume from '../components/Resume';
 import Contact from '../components/Contact';
 import ScrollAnimate from '../components/ScrollAnimate';
@@ -31,6 +32,9 @@ const Home = () => {
       </ScrollAnimate>
       <ScrollAnimate direction="up">
         <Achievements />
+      </ScrollAnimate>
+      <ScrollAnimate direction="up">
+        <Hobbies />
       </ScrollAnimate>
       <ScrollAnimate direction="up">
         <Resume />

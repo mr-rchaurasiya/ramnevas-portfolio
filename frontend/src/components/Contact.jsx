@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../utils/portfolioData';
 import AnimatedTitle from './AnimatedTitle';
+import { API_BASE_URL } from '../utils/api';
 
 const Contact = () => {
-  const { email, location, linkedin } = portfolioData.personalInfo;
+  const { email, location, locationUrl, linkedin, instagram, whatsapp } = portfolioData.personalInfo;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -53,7 +54,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${API_BASE_URL}/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -90,33 +91,51 @@ const Contact = () => {
             </p>
             
             <div className="d-flex flex-column gap-4">
-              <div className="d-flex align-items-center gap-3">
+              <a href={`mailto:${email}`} className="d-flex align-items-center gap-3 text-decoration-none contact-link-item">
                 <div className="bg-gradient-accent rounded-circle p-2 text-white d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }}>
                   <i className="bi bi-envelope fs-5"></i>
                 </div>
                 <div>
                   <h4 className="h6 text-white mb-0 fw-bold">Email</h4>
-                  <span className="small text-muted">{email}</span>
+                  <span className="small text-muted transition-color">{email}</span>
                 </div>
-              </div>
-              <div className="d-flex align-items-center gap-3">
+              </a>
+              <a href={locationUrl} target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-3 text-decoration-none contact-link-item">
                 <div className="bg-gradient-accent rounded-circle p-2 text-white d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }}>
                   <i className="bi bi-geo-alt fs-5"></i>
                 </div>
                 <div>
                   <h4 className="h6 text-white mb-0 fw-bold">Location</h4>
-                  <span className="small text-muted">{location}</span>
+                  <span className="small text-muted transition-color">{location}</span>
                 </div>
-              </div>
-              <div className="d-flex align-items-center gap-3">
+              </a>
+              <a href={`https://${linkedin}`} target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-3 text-decoration-none contact-link-item">
                 <div className="bg-gradient-accent rounded-circle p-2 text-white d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }}>
                   <i className="bi bi-linkedin fs-5"></i>
                 </div>
                 <div>
                   <h4 className="h6 text-white mb-0 fw-bold">LinkedIn</h4>
-                  <span className="small text-muted">{linkedin}</span>
+                  <span className="small text-muted transition-color">{linkedin}</span>
                 </div>
-              </div>
+              </a>
+              <a href={`https://${instagram}`} target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-3 text-decoration-none contact-link-item">
+                <div className="bg-gradient-accent rounded-circle p-2 text-white d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }}>
+                  <i className="bi bi-instagram fs-5"></i>
+                </div>
+                <div>
+                  <h4 className="h6 text-white mb-0 fw-bold">Instagram</h4>
+                  <span className="small text-muted transition-color">{instagram}</span>
+                </div>
+              </a>
+              <a href={`https://wa.me/917830911201`} target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-3 text-decoration-none contact-link-item">
+                <div className="bg-gradient-accent rounded-circle p-2 text-white d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }}>
+                  <i className="bi bi-whatsapp fs-5"></i>
+                </div>
+                <div>
+                  <h4 className="h6 text-white mb-0 fw-bold">WhatsApp</h4>
+                  <span className="small text-muted transition-color">{whatsapp}</span>
+                </div>
+              </a>
             </div>
           </div>
           

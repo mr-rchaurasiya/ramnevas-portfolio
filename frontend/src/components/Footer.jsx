@@ -3,7 +3,7 @@ import { portfolioData } from '../utils/portfolioData';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { name, email, github, linkedin } = portfolioData.personalInfo;
+  const { name, email, github, linkedin, instagram } = portfolioData.personalInfo;
 
   return (
     <footer className="py-5 bg-dark-base border-top border-white-10" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
@@ -20,6 +20,12 @@ const Footer = () => {
             </a>
             <a href={`https://${linkedin}`} target="_blank" rel="noopener noreferrer" className="text-white-50 hover:text-white" aria-label="LinkedIn">
               <i className="bi bi-linkedin"></i>
+            </a>
+            <a href={`https://${instagram}`} target="_blank" rel="noopener noreferrer" className="text-white-50 hover:text-white" aria-label="Instagram">
+              <i className="bi bi-instagram"></i>
+            </a>
+            <a href="https://wa.me/917830911201" target="_blank" rel="noopener noreferrer" className="text-white-50 hover:text-white" aria-label="WhatsApp">
+              <i className="bi bi-whatsapp"></i>
             </a>
             <a href={`mailto:${email}`} className="text-white-50 hover:text-white" aria-label="Email">
               <i className="bi bi-envelope-fill"></i>

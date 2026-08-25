@@ -394,4 +394,243 @@ section {
   color: rgba(255, 255, 255, 0.6) !important;
 }
 
+/* Contact Page Link Interactions */
+.contact-link-item {
+  transition: var(--transition-smooth);
+}
+
+.contact-link-item:hover {
+  transform: translateX(6px);
+}
+
+.contact-link-item .transition-color {
+  transition: var(--transition-smooth);
+}
+
+.contact-link-item:hover .transition-color {
+  color: var(--primary-accent) !important;
+}
+
+/* =========================================================================
+   A4 RESUME PREVIEW & PRINT STYLES
+   ========================================================================= */
+
+.resume-paper {
+  background: var(--bg-dark-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  transition: var(--transition-smooth);
+}
+
+@media (max-width: 767px) {
+  .resume-paper {
+    padding: 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+.resume-header {
+  border-bottom: 2px solid var(--primary-accent);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.resume-section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-accent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.resume-item {
+  margin-bottom: 1.25rem;
+}
+
+.resume-item-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.resume-item-subtitle {
+  font-size: 0.85rem;
+  color: var(--secondary-accent);
+  font-weight: 600;
+}
+
+.resume-item-duration {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Medium screens custom borders */
+@media (min-width: 768px) {
+  .border-end-md {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 2rem;
+  }
+}
+
+/* Print/Light theme styles override */
+.resume-paper.print-theme {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+.resume-paper.print-theme .text-white {
+  color: #0f172a !important;
+}
+
+.resume-paper.print-theme .text-white-50 {
+  color: #334155 !important;
+}
+
+.resume-paper.print-theme .text-muted {
+  color: #64748b !important;
+}
+
+.resume-paper.print-theme .border-end-md {
+  border-right-color: #e2e8f0 !important;
+}
+
+.resume-paper.print-theme .resume-section-title {
+  color: #2563eb !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+.resume-paper.print-theme .resume-item-subtitle {
+  color: #0d9488 !important;
+}
+
+.resume-paper.print-theme a {
+  color: #2563eb !important;
+}
+
+/* W3C/Recruiter clean print output layout */
+@media print {
+  /* Hide all background visual noise */
+  body * {
+    visibility: hidden;
+  }
+  .resume-paper, .resume-paper * {
+    visibility: visible;
+  }
+  .resume-paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+  }
+  
+  .resume-paper .text-white {
+    color: #000000 !important;
+  }
+  .resume-paper .text-white-50 {
+    color: #333333 !important;
+  }
+  .resume-paper .text-muted {
+    color: #555555 !important;
+  }
+  .resume-paper .border-end-md {
+    border-right-color: #cccccc !important;
+  }
+  .resume-paper .resume-section-title {
+    color: #0000ff !important;
+    border-bottom-color: #cccccc !important;
+  }
+  .resume-paper .resume-item-subtitle {
+    color: #008080 !important;
+  }
+  .resume-paper a {
+    color: #0000ee !important;
+  }
+}
+
+/* Sports/Hobby Formats Hover Glow */
+.hover-glow {
+  transition: var(--transition-smooth);
+}
+
+.hover-glow:hover {
+  border-color: var(--primary-accent) !important;
+  box-shadow: 0 0 12px var(--border-glow);
+  transform: translateY(-2px);
+}
+
+/* Fade/Slide-in Animation for Interactive Dashboard */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Hobby Popup Modal */
+.hobby-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 30, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hobby-modal-container {
+  width: 100%;
+  max-width: 950px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.98) !important;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 

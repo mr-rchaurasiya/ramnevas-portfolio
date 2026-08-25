@@ -55,8 +55,8 @@ const About = () => {
               </div>
               <div className="col-6">
                 <div className="card-glass p-4 text-center h-100">
-                  <h4 className="display-4 fw-bold text-gradient mb-2">2+</h4>
-                  <p className="small text-muted mb-0 fw-semibold text-uppercase tracking-wider">Core Projects</p>
+                  <h4 className="display-4 fw-bold text-gradient mb-2">4+</h4>
+                  <p className="small text-muted mb-0 fw-semibold text-uppercase tracking-wider">Completed Projects</p>
                 </div>
               </div>
               <div className="col-6">
