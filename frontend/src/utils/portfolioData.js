@@ -78,7 +78,7 @@ export const portfolioData = {
       division: "First"
     },
     {
-      degree: "Class 12 (B-Science)",
+      degree: "Class 12 (Science Stream (Maths) )",
       institution: "Uttar Pradesh Madhyamik Shiksha Parishad (UP Board)",
       duration: "2020",
       percentage: "77.6%",

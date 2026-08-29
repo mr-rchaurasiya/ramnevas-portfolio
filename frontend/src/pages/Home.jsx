@@ -2,10 +2,12 @@ import React from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
+import DSAStats from '../components/DSAStats';
 import Experience from '../components/Experience';
 import Education from '../components/Education';
 import Projects from '../components/Projects';
 import Achievements from '../components/Achievements';
+import Testimonials from '../components/Testimonials';
 import Hobbies from '../components/Hobbies';
 import Resume from '../components/Resume';
 import Contact from '../components/Contact';
@@ -22,6 +24,9 @@ const Home = () => {
         <Skills />
       </ScrollAnimate>
       <ScrollAnimate direction="up">
+        <DSAStats />
+      </ScrollAnimate>
+      <ScrollAnimate direction="up">
         <Experience />
       </ScrollAnimate>
       <ScrollAnimate direction="up">
@@ -32,6 +37,9 @@ const Home = () => {
       </ScrollAnimate>
       <ScrollAnimate direction="up">
         <Achievements />
+      </ScrollAnimate>
+      <ScrollAnimate direction="up">
+        <Testimonials />
       </ScrollAnimate>
       <ScrollAnimate direction="up">
         <Hobbies />
@@ -47,4 +55,3 @@ const Home = () => {
 };
 
 export default Home;
-

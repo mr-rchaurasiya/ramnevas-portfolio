@@ -17,6 +17,46 @@
   --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Light Theme Variables */
+body.light-theme {
+  --bg-dark-base: #f8fafc;        /* Slate 50 */
+  --bg-dark-card: rgba(255, 255, 255, 0.75); /* White translucent card */
+  --bg-dark-nav: rgba(241, 245, 249, 0.85); /* Slate 100 translucent navbar */
+  
+  --primary-accent: #2563eb;      /* Vibrant Blue */
+  --secondary-accent: #0f766e;    /* Vibrant Teal */
+  --text-primary: #0f172a;        /* Slate 900 */
+  --text-muted: #475569;          /* Slate 600 */
+  --border-color: rgba(15, 23, 42, 0.08);
+  --border-glow: rgba(37, 99, 235, 0.08);
+}
+
+/* Light Mode Blob Opacity Adjustment */
+body.light-theme .bg-blob {
+  opacity: 0.12 !important;
+}
+
+body.light-theme .text-white {
+  color: #0f172a !important;
+}
+
+body.light-theme .text-white-50 {
+  color: #334155 !important;
+}
+
+body.light-theme .text-muted {
+  color: #475569 !important;
+}
+
+body.light-theme .card-glass {
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+}
+
+body.light-theme .card-glass:hover {
+  box-shadow: 0 10px 30px -10px var(--border-glow);
+}
+
+
 /* Base Styles & Horizontal Scroll Guard */
 html, body {
   max-width: 100%;
@@ -632,5 +672,23 @@ section {
     transform: scale(1);
   }
 }
+
+/* Modal Backdrop Blur Helper */
+.modal-backdrop-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
 
 
