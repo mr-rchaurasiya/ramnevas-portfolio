@@ -4,7 +4,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [isOpen, setIsOpen] = useState(false);
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
+  const [theme, setTheme] = useState('dark');
 
   // Change navbar background on scroll
   useEffect(() => {
@@ -43,7 +43,6 @@ const Navbar = () => {
     } else {
       document.body.classList.remove('light-theme');
     }
-    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
