@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 991px) {
   .hero-section {
-    padding-top: 130px !important; /* Push down on mobile to clear the fixed navbar */
+    padding-top: 160px !important; /* Push down on mobile to clear the fixed navbar */
   }
 }
 
