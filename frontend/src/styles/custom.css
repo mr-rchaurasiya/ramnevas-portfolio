@@ -340,7 +340,9 @@ body.light-theme .filter-btn:hover {
 }
 
 body.light-theme .filter-btn.active {
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent)) !important;
   color: white !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
 }
 
 /* Custom Buttons - Touch friendly sizing */
