@@ -24,6 +24,13 @@ const Testimonials = () => {
       role: "Associate Developer",
       company: "Tech Collaboration Team",
       avatar: "RV"
+    },
+    {
+      quote: "I recently reviewed the developer portfolio, and the layout looks clean and very professional. The About section in particular is extremely well-structured and detailed. Overall, the presentation, theme options, and academic details are excellent.",
+      name: "Dinesh Gupta",
+      role: "Chemical Engineer",
+      company: "Independent Reviewer",
+      avatar: "DG"
     }
   ];
 
