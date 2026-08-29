@@ -113,6 +113,125 @@ const conceptDetails = {
         items: ['IPv4', 'IPv6', 'Subnetting', 'MAC Address', 'ARP', 'Routing', 'TCP Connection Establishment', 'HTTP Request-Response Cycle']
       }
     ]
+  },
+  'Software Engineering': {
+    title: 'Software Engineering & SDLC',
+    subsections: [
+      {
+        title: 'SDLC Models',
+        items: ['Waterfall Model', 'Agile Methodology', 'Scrum Framework', 'SDLC Phases']
+      },
+      {
+        title: 'Design & Principles',
+        items: ['SOLID Principles', 'DRY & KISS', 'MVC Architecture', 'Monolithic vs Microservices']
+      },
+      {
+        title: 'Testing & QA',
+        items: ['Unit Testing', 'Integration Testing', 'System Testing', 'CI/CD Pipelines']
+      }
+    ]
+  },
+  'Computer Architecture': {
+    title: 'Computer Organization & Architecture',
+    subsections: [
+      {
+        title: 'CPU Organization',
+        items: ['CPU Structure', 'Von Neumann Architecture', 'Instruction Cycle', 'ALU & Control Unit']
+      },
+      {
+        title: 'Execution & Speed',
+        items: ['Pipelining', 'Superscalar Architecture', 'Hazards']
+      },
+      {
+        title: 'Memory & I/O',
+        items: ['Cache Coherence', 'DMA (Direct Memory Access)', 'I/O Interrupts', 'Register Transfer']
+      }
+    ]
+  },
+  'Cyber Security': {
+    title: 'Cyber Security & Cryptography',
+    subsections: [
+      {
+        title: 'Fundamentals',
+        items: ['CIA Triad', 'Symmetric Encryption', 'Asymmetric Encryption', 'Digital Signatures', 'Hashing Algorithms']
+      },
+      {
+        title: 'Security Threats',
+        items: ['Phishing & Social Engineering', 'SQL Injection', 'XSS (Cross-Site Scripting)', 'DDoS Attacks', 'Malware & Ransomware']
+      },
+      {
+        title: 'Network Defense',
+        items: ['Firewalls', 'VPN (Virtual Private Network)', 'IDS / IPS', 'Zero Trust Security']
+      }
+    ]
+  },
+  'Cloud Computing': {
+    title: 'Cloud Computing Services & Infrastructure',
+    subsections: [
+      {
+        title: 'Service Models',
+        items: ['IaaS', 'PaaS', 'SaaS', 'Serverless Computing']
+      },
+      {
+        title: 'Deployment Models',
+        items: ['Public Cloud', 'Private Cloud', 'Hybrid Cloud', 'Multi-Cloud']
+      },
+      {
+        title: 'Infrastructure',
+        items: ['Virtualization', 'Containers & Docker', 'Kubernetes Orchestration', 'Load Balancing & Auto-scaling']
+      }
+    ]
+  },
+  'AI & ML': {
+    title: 'Artificial Intelligence & Machine Learning',
+    subsections: [
+      {
+        title: 'AI Concepts',
+        items: ['Artificial Intelligence', 'Turing Test', 'Expert Systems']
+      },
+      {
+        title: 'Machine Learning',
+        items: ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning', 'Overfitting & Underfitting']
+      },
+      {
+        title: 'Deep Learning',
+        items: ['Neural Networks', 'Activation Functions', 'NLP (Natural Language Processing)', 'Computer Vision']
+      }
+    ]
+  },
+  'Theory of Computation': {
+    title: 'Theory of Computation & Automata',
+    subsections: [
+      {
+        title: 'Automata Theory',
+        items: ['DFA (Deterministic Finite Automata)', 'NFA (Non-Deterministic Automata)', 'Regular Expressions']
+      },
+      {
+        title: 'Grammars & Parsers',
+        items: ['Context Free Grammar (CFG)', 'Pushdown Automata (PDA)', 'Chomsky Hierarchy']
+      },
+      {
+        title: 'Turing Machines',
+        items: ['Turing Machine', 'Decidability', 'Halting Problem']
+      }
+    ]
+  },
+  'Compiler Design': {
+    title: 'Compiler Design Phases',
+    subsections: [
+      {
+        title: 'Front-End Phases',
+        items: ['Lexical Analysis', 'Syntax Analysis (Parsing)', 'Semantic Analysis']
+      },
+      {
+        title: 'Back-End Phases',
+        items: ['Intermediate Code Generation', 'Code Optimization', 'Target Code Generation']
+      },
+      {
+        title: 'Utility Systems',
+        items: ['Symbol Table', 'Error Handling Systems']
+      }
+    ]
   }
 };
 
@@ -906,15 +1025,346 @@ const dsaDetails = {
     definition: 'Path selection algorithms directing packets from source to destination networks.',
     interview: 'Uses routing tables. Routers forward packets based on destination IP address.'
   },
-  'TCP Connection Establishment': {
-    definition: '3-way handshake establishing reliable TCP connection between client and server.',
-    example: '1. SYN (Client Request) ---->\n2. <---- SYN-ACK (Server Respond)\n3. ACK (Client Confirm) ---->',
-    interview: 'SYN (synchronize sequence numbers), SYN-ACK (acknowledge and sync back), ACK (confirm connection).'
-  },
   'HTTP Request-Response Cycle': {
     definition: 'Client HTTP request followed by server HTTP response cycle.',
     example: 'GET request fetches index.html → Server responds with 200 OK HTML.',
     interview: 'Status Codes: 200 (OK), 201 (Created), 400 (Bad), 401 (Auth), 403 (Forbidden), 404 (Not Found), 500 (Server Error).'
+  },
+
+  // ==========================================
+  // ================= PART 5 — Software Engineering ============
+  // ==========================================
+  'Waterfall Model': {
+    definition: 'Waterfall Model ek sequential development model hai jisme requirements gathering, design, implementation, testing, deployment, aur maintenance phases step-by-step complete hote hain.',
+    interview: 'Iska main drawback hai rigidity—once a phase is complete, going back to make changes is extremely difficult and costly.'
+  },
+  'Agile Methodology': {
+    definition: 'Agile ek iterative software development framework hai jo continuous collaboration, adaptability, customer feedback, and incremental delivery par focus karta hai.',
+    interview: 'Enables quick adaptation to changing requirements and delivers functional software in short cycles (sprints).'
+  },
+  'Scrum Framework': {
+    definition: 'Scrum ek agile software engineering process framework hai jisme teams sprints (usually 2-4 weeks) ke cycles me deliverables target karti hain.',
+    interview: 'Roles: Product Owner, Scrum Master, Developers. Ceremonies: Daily Standup, Sprint Planning, Sprint Review, Sprint Retrospective.'
+  },
+  'SDLC Phases': {
+    definition: 'SDLC (Software Development Life Cycle) standard phases: Requirements, Design, Implementation (Coding), Testing, Deployment, and Maintenance.',
+    interview: 'Ensure each phase completes its Entry/Exit criteria for strong code quality.'
+  },
+  'SOLID Principles': {
+    definition: 'SOLID are five object-oriented design principles: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion.',
+    interview: 'S: One class has one reason to change. O: Open for extension, closed for modification. L: Subtypes must be substitutable for base types. I: Many client-specific interfaces are better than one general interface. D: Depend on abstractions, not concretions.'
+  },
+  'DRY & KISS': {
+    definition: 'DRY: Don\'t Repeat Yourself (reduces code redundancy). KISS: Keep It Simple, Stupid (encourages simple and readable design).',
+    interview: 'DRY prevents copy-paste maintenance issues, KISS avoids over-engineering systems.'
+  },
+  'MVC Architecture': {
+    definition: 'Model-View-Controller design pattern separating application logic (Model), UI presentation (View), and user input handlers (Controller).',
+    interview: 'Improves scalability and decoupling. E.g., Backend routes act as Controllers, DB schemas as Models, React pages as Views.'
+  },
+  'Monolithic vs Microservices': {
+    definition: 'Monolithic binds all backend features in a single server process, whereas Microservices breaks them into independent, decoupled service APIs.',
+    interview: 'Monolith is easier to develop/deploy initially; Microservices offers independent scaling, fault isolation, and technology stack flexibility.'
+  },
+  'Unit Testing': {
+    definition: 'Testing individual software units or functions in isolation (e.g. using Jest, Mocha, or JUnit).',
+    interview: 'Uses Mock objects to bypass database/network dependencies. Ensures individual logic behaves correctly.'
+  },
+  'Integration Testing': {
+    definition: 'Testing combined software modules together to verify their interactions and data flows.',
+    interview: 'Validates API endpoints interacting with database adapters or external third-party services.'
+  },
+  'System Testing': {
+    definition: 'Testing the complete, integrated application system as a whole to ensure it meets specifications.',
+    interview: 'Black-box testing covering security, performance, stress limits, and end-to-end user flows.'
+  },
+  'CI/CD Pipelines': {
+    definition: 'Continuous Integration & Continuous Deployment pipelines automate building, testing, and deploying codebase updates to production.',
+    interview: 'Triggers automatically on git push (e.g. GitHub Actions). Reduces manual deployment errors and catches bugs early.'
+  },
+
+  // ==========================================
+  // ================= PART 6 — Computer Architecture ============
+  // ==========================================
+  'CPU Structure': {
+    definition: 'CPU core subunits: ALU (Arithmetic Logic Unit), CU (Control Unit), and Registers (high-speed internal CPU storage).',
+    interview: 'ALU performs calculations, CU decodes instructions and directs data paths, registers hold active instruction data.'
+  },
+  'Von Neumann Architecture': {
+    definition: 'Computer architecture design incorporating a shared memory bus for both instructions and data.',
+    interview: 'Von Neumann Bottleneck occurs because CPU throughput is limited by the shared bus bottleneck speed.'
+  },
+  'Instruction Cycle': {
+    definition: 'The fetch, decode, execute, and store sequence executed continuously by the CPU for every instruction.',
+    interview: 'Program Counter (PC) stores next instruction address, Instruction Register (IR) holds current decoded instruction.'
+  },
+  'ALU & Control Unit': {
+    definition: 'ALU executes arithmetic/logical operations; Control Unit generates timing signals to sync processor operations.',
+    interview: 'CU acts as the brain\'s traffic cop, translating binary instructions into hardware control signals.'
+  },
+  'Pipelining': {
+    definition: 'Instruction execution optimization technique that overlaps multiple instruction stages simultaneously.',
+    interview: 'Speeds up instruction throughput. Performance can be degraded by hazards: Structural, Data, and Control (branches).'
+  },
+  'Superscalar Architecture': {
+    definition: 'Processor architecture executing multiple instructions per clock cycle utilizing multiple execution pipelines.',
+    interview: 'Requires redundant ALU units and hazard prediction logic to execute independent instructions in parallel.'
+  },
+  'Hazards': {
+    definition: 'Pipelining issues preventing next instruction execution: Structural (resource clash), Data (dependency), Control (branch/jump).',
+    interview: 'Mitigated by pipeline stalling (bubbles), data forwarding, or branch predictors.'
+  },
+  'Cache Coherence': {
+    definition: 'Ensuring that shared memory updates are consistently propagated across all local CPU cores caches.',
+    interview: 'Protocols like MESI (Modified, Exclusive, Shared, Invalid) keep cache records synchronized across multi-core systems.'
+  },
+  'DMA (Direct Memory Access)': {
+    definition: 'Hardware system allowing I/O devices to transfer data directly to/from main memory without constant CPU intervention.',
+    interview: 'Releases CPU from handling byte transfer interrupts, significantly improving high-speed I/O device throughput.'
+  },
+  'I/O Interrupts': {
+    definition: 'Hardware/software signals notifying the CPU that an I/O event requires immediate attention.',
+    interview: 'Saves CPU cycles compared to Polling. CPU executes Interrupt Service Routine (ISR) when triggered.'
+  },
+  'Register Transfer': {
+    definition: 'Micro-operations transferring binary data details between registers inside the CPU core.',
+    interview: 'Baseline timing actions specifying register load, store, shift, or arithmetic steps.'
+  },
+
+  // ==========================================
+  // ================= PART 7 — Cyber Security ============
+  // ==========================================
+  'CIA Triad': {
+    definition: 'Core security model parameters: Confidentiality (encryption), Integrity (hashing), Availability (uptime/redundancy).',
+    interview: 'C protects privacy, I prevents unauthorized tampering, A ensures authorized resource access.'
+  },
+  'Symmetric Encryption': {
+    definition: 'Encryption method using a single shared key for both encrypting and decrypting data (e.g. AES, DES).',
+    interview: 'Fast and lightweight. Main challenge: Securely sharing the key between sender and receiver.'
+  },
+  'Asymmetric Encryption': {
+    definition: 'Encryption method utilizing key pairs: Public Key (anyone can encrypt) and Private Key (only owner decrypts) (e.g. RSA, ECC).',
+    interview: 'Solves key distribution issues, but is computationally slower. Used in SSL/TLS handshakes.'
+  },
+  'Digital Signatures': {
+    definition: 'Cryptographic mechanism verifying message authenticity and non-repudiation using key pairs.',
+    interview: 'Sender encrypts hash using Private Key. Receiver decrypts hash using Public Key and verifies matches.'
+  },
+  'Hashing Algorithms': {
+    definition: 'One-way mathematical functions converting data inputs to fixed-size unique hash values (e.g. SHA-256, MD5, bcrypt).',
+    interview: 'One-way only (cannot reverse decrypt). Used to store user passwords securely and verify data integrity.'
+  },
+  'Phishing & Social Engineering': {
+    definition: 'Tricking users into revealing sensitive credentials or data using fraudulent communications (emails, fake pages).',
+    interview: 'Human-layer threat. Mitigated by Multi-Factor Authentication (MFA) and user security training.'
+  },
+  'SQL Injection': {
+    definition: 'Vulnerability where malicious SQL queries are input into text fields to manipulate backend databases directly.',
+    interview: 'Mitigated by Parametrized Queries (Prepared Statements) or using modern ORMs (like Mongoose or Sequelize).'
+  },
+  'XSS (Cross-Site Scripting)': {
+    definition: 'Vulnerability allowing attackers to inject malicious scripts into trusted websites visited by other users.',
+    interview: 'Mitigated by Sanitizing input strings and utilizing Content Security Policies (CSP) to restrict script sources.'
+  },
+  'DDoS Attacks': {
+    definition: 'Distributed Denial of Service floods web servers with high volumes of traffic to crash system availability.',
+    interview: 'Mitigated by rate limiting, Cloudflare filtering, and globally distributed CDNs.'
+  },
+  'Malware & Ransomware': {
+    definition: 'Malicious software designed to compromise systems (Malware) or encrypt files demanding financial payment (Ransomware).',
+    interview: 'Prevented by operating system patches, strict execution policies, and automated snapshot backups.'
+  },
+  'Firewalls': {
+    definition: 'Network security system monitoring and controlling incoming/outgoing traffic based on security policies.',
+    interview: 'Can be stateless (filters packets) or stateful (inspects active connection streams).'
+  },
+  'VPN (Virtual Private Network)': {
+    definition: 'Encrypted tunnel routing local network connections securely through a remote server.',
+    interview: 'Masks client IP address and encrypts network traffic to prevent local Wi-Fi eavesdropping.'
+  },
+  'IDS / IPS': {
+    definition: 'Intrusion Detection System (alerts on threats) and Intrusion Prevention System (actively blocks threats).',
+    interview: 'Analyzes packet payloads against signature patterns or anomaly detection profiles.'
+  },
+  'Zero Trust Security': {
+    definition: 'Security paradigm based on the principle of "Never Trust, Always Verify" for all network connections.',
+    interview: 'Requires continuous authentication, micro-segmentation, and minimal privilege rights checks.'
+  },
+
+  // ==========================================
+  // ================= PART 8 — Cloud Computing ============
+  // ==========================================
+  'IaaS': {
+    definition: 'Infrastructure as a Service providing virtualized raw compute, storage, and networking resources over the internet (e.g., AWS EC2).',
+    interview: 'Client manages operating systems, runtimes, database applications, and configurations.'
+  },
+  'PaaS': {
+    definition: 'Platform as a Service providing pre-configured application runtimes and databases (e.g., Heroku, AWS Elastic Beanstalk).',
+    interview: 'Client just deploys application code. Cloud provider manages OS patching and scaling.'
+  },
+  'SaaS': {
+    definition: 'Software as a Service providing complete, user-facing software applications over the web (e.g., Gmail, Office 365).',
+    interview: 'Zero code management needed. The application is completely hosted and updated by the provider.'
+  },
+  'Serverless Computing': {
+    definition: 'Cloud execution model executing short-lived code tasks on demand without provisioning standing servers (e.g. AWS Lambda).',
+    interview: 'Highly scalable, "pay-per-execution" billing. Avoids cold start latency overheads by keeping functions warm.'
+  },
+  'Public Cloud': {
+    definition: 'Cloud infrastructure shared across multiple corporate tenants and hosted by third-party hyperscalers (AWS, Azure, GCP).',
+    interview: 'Highly cost-effective with zero capital expenditure; resources are shared securely on public channels.'
+  },
+  'Private Cloud': {
+    definition: 'Cloud infrastructure dedicated entirely to a single enterprise tenant on secure internal networks.',
+    interview: 'Offers maximum security, custom configurations, and compliance controls at higher hardware costs.'
+  },
+  'Hybrid Cloud': {
+    definition: 'Combining Public Cloud services with Private Cloud/On-Premise servers to share data resources.',
+    interview: 'Enables "cloud bursting"—moving data workloads to the public cloud when local on-premise compute capacity spikes.'
+  },
+  'Multi-Cloud': {
+    definition: 'Utilizing cloud compute services from multiple distinct public providers (e.g., AWS + Azure) to prevent vendor lock-in.',
+    interview: 'Reduces downtime risks and optimizes cloud costs, but increases multi-platform administration overhead.'
+  },
+  'Virtualization': {
+    definition: 'Technology using a Hypervisor software layer to split physical server resources into multiple virtual machines (VMs).',
+    interview: 'Allows running different operating systems on the same physical processor hardware.'
+  },
+  'Containers & Docker': {
+    definition: 'Bundling application code, packages, and dependencies in isolated container files sharing the host OS kernel (via Docker).',
+    interview: 'Much lighter than virtual machines since they do not bundle separate guest operating systems.'
+  },
+  'Kubernetes Orchestration': {
+    definition: 'Open-source platform automating deployment, scaling, and management of containerized application clusters.',
+    interview: 'Provides self-healing (replaces dead containers), load balancing, and rolling software updates.'
+  },
+  'Load Balancing & Auto-scaling': {
+    definition: 'Distributing traffic to multiple servers (Load Balancing) and adding/removing servers dynamically based on CPU usage (Auto-scaling).',
+    interview: 'Prevents single-node server crashes and minimizes cloud costs during quiet business hours.'
+  },
+
+  // ==========================================
+  // ================= PART 9 — AI & ML ============
+  // ==========================================
+  'Artificial Intelligence': {
+    definition: 'Creating systems and computers capable of executing cognitive tasks requiring human intelligence.',
+    interview: 'Encompasses machine learning, expert planning systems, robotics, and natural language processing.'
+  },
+  'Turing Test': {
+    definition: 'A test of a machine\'s ability to exhibit intelligent behavior indistinguishable from that of a human.',
+    interview: 'Evaluates if a human evaluator conversing blindly cannot distinguish machine outputs from a human.'
+  },
+  'Expert Systems': {
+    definition: 'Traditional AI system using a knowledge base and IF-THEN rules engine to solve complex logical problems.',
+    interview: 'Rule-based. Excellent for structured diagnostics, but lacks dynamic learning capabilities.'
+  },
+  'Supervised Learning': {
+    definition: 'Machine learning algorithms trained on labeled datasets containing inputs and matching correct target outputs.',
+    interview: 'Algorithms: Linear Regression, Logistic Regression, Decision Trees, Support Vector Machines (SVM).'
+  },
+  'Unsupervised Learning': {
+    definition: 'Machine learning algorithms trained on unlabeled datasets to discover underlying clusters and structures.',
+    interview: 'Algorithms: K-Means Clustering, Hierarchical Clustering, Principal Component Analysis (PCA).'
+  },
+  'Reinforcement Learning': {
+    definition: 'ML paradigm where software agents learn optimal actions in an environment to maximize cumulative reward parameters.',
+    interview: 'Uses feedback loops (Action, State, Reward). Popular in robotics, self-driving cars, and game play.'
+  },
+  'Overfitting & Underfitting': {
+    definition: 'Overfitting: Model memorizes training noise and fails on test data. Underfitting: Model is too simple to learn the dataset trend.',
+    interview: 'Overfitting is resolved by regularization, more training data, or dropout. Underfitting requires increasing model parameters.'
+  },
+  'Neural Networks': {
+    definition: 'Computational models inspired by biological brain neurons composed of input, hidden, and output layers.',
+    interview: 'Nodes compute weighted inputs, add biases, and pass results through activation functions to make predictions.'
+  },
+  'Activation Functions': {
+    definition: 'Mathematical functions introducing non-linearity to neural network outputs (e.g. ReLU, Sigmoid, Tanh).',
+    interview: 'ReLU is most popular in hidden layers to mitigate vanishing gradient problems; Sigmoid is used for binary classifications.'
+  },
+  'NLP (Natural Language Processing)': {
+    definition: 'Enabling computers to read, translate, parse, and generate human languages (e.g. tokenization, sentiment analysis, Transformers).',
+    interview: 'Modern NLP relies heavily on Large Language Models (LLMs) utilizing self-attention networks.'
+  },
+  'Computer Vision': {
+    definition: 'AI applications training computers to recognize and interpret physical world images and video streams.',
+    interview: 'Commonly utilizes Convolutional Neural Networks (CNNs) to detect visual edges and object layers.'
+  },
+
+  // ==========================================
+  // ================= PART 10 — Theory of Computation ============
+  // ==========================================
+  'DFA (Deterministic Finite Automata)': {
+    definition: 'Finite state machine where for each state there is exactly one transition arrow for each input symbol.',
+    interview: 'Simplest computational model. Recognizes Regular Languages. No internal memory store.'
+  },
+  'NFA (Non-Deterministic Automata)': {
+    definition: 'Finite state machine where a state can have multiple transitions (or epsilon jumps) for a single input symbol.',
+    interview: 'Both DFA and NFA recognize the exact same class of languages (Regular Languages); NFAs are easier to design.'
+  },
+  'Regular Expressions': {
+    definition: 'Algebraic notations describing the set of strings forming a regular language.',
+    interview: 'Can be converted directly to NFAs using Thompson\'s Construction, then converted to DFAs.'
+  },
+  'Context Free Grammar (CFG)': {
+    definition: 'Grammar containing production rules rewriting a single non-terminal to strings of terminals/non-terminals.',
+    interview: 'Recognized by Pushdown Automata (PDA). Used to define programming languages syntax structures.'
+  },
+  'Pushdown Automata (PDA)': {
+    definition: 'Finite state machine equipped with an auxiliary LIFO Stack memory storage system.',
+    interview: 'Recognizes Context-Free Languages. Stack allows tracking nested syntax structures (like matching parentheses).'
+  },
+  'Chomsky Hierarchy': {
+    definition: 'Classification of grammars: Type 3 (Regular) ⊂ Type 2 (Context-Free) ⊂ Type 1 (Context-Sensitive) ⊂ Type 0 (Unrestricted).',
+    interview: 'Type 3 recognized by DFA, Type 2 by PDA, Type 1 by Linear Bounded Automata, Type 0 by Turing Machines.'
+  },
+  'Turing Machine': {
+    definition: 'Mathematical model of computation consisting of an infinitely long memory tape and a read/write head.',
+    interview: 'Ultimate computational model. Represents what can be mathematically computed (Church-Turing Thesis).'
+  },
+  'Decidability': {
+    definition: 'A problem is decidable if there exists a Turing Machine that halts in a finite number of steps with an answer for all inputs.',
+    interview: 'Decidable (Turing-decidable) vs Undecidable (problems that cannot be solved by any computer program).'
+  },
+  'Halting Problem': {
+    definition: 'Famous undecidable problem proving that no program can exist that determines if an arbitrary code halts or loops forever.',
+    interview: 'Proven undecidable by Alan Turing using a proof by contradiction (diagonalization).'
+  },
+
+  // ==========================================
+  // ================= PART 11 — Compiler Design ============
+  // ==========================================
+  'Lexical Analysis': {
+    definition: 'First phase of a compiler converting raw input character streams into logical tokens (keywords, identifiers).',
+    interview: 'Uses Regular Expressions to define token rules, implemented using DFAs. Emits errors for invalid characters.'
+  },
+  'Syntax Analysis (Parsing)': {
+    definition: 'Second compiler phase parsing tokens stream into a hierarchical Abstract Syntax Tree (AST) matching CFG grammar rules.',
+    interview: 'Algorithms: Top-down (LL parsers) vs Bottom-up (LR, LALR parsers). Detects bracket mismatch and structural errors.'
+  },
+  'Semantic Analysis': {
+    definition: 'Third compiler phase checking abstract syntax tree against language semantic rules (type checking, variable declarations).',
+    interview: 'Ensures that expressions are logically sound (e.g. preventing adding an integer to a string variable).'
+  },
+  'Intermediate Code Generation': {
+    definition: 'Generating a machine-independent lower-level code representation (e.g. Three-Address Code, AST) from the parsed tree.',
+    interview: 'Allows decoupling compiler front-end (source syntax parser) from back-end (machine target generators).'
+  },
+  'Code Optimization': {
+    definition: 'Analyzing and modifying intermediate code to improve speed and minimize target storage footprint.',
+    interview: 'Techniques: Constant folding, loop unrolling, dead-code elimination, strength reduction.'
+  },
+  'Target Code Generation': {
+    definition: 'Translating optimized intermediate code into target machine assembler or raw binary code instructions.',
+    interview: 'Handles register allocations, instruction selections, and memory location binding steps.'
+  },
+  'Symbol Table': {
+    definition: 'Compiler internal hash table tracking identifiers variables types, scope offsets, and memory allocations.',
+    interview: 'Used across all phases of compilation to verify and resolve variable scope bindings.'
+  },
+  'Error Handling Systems': {
+    definition: 'Compiler subsystem detecting, reporting, and recovering from syntactic or semantic errors during compilation.',
+    interview: 'Helps programmers locate syntax bugs. Good compilers recover gracefully to search for subsequent errors.'
   }
 };
 

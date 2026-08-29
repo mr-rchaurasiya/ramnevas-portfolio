@@ -20,6 +20,9 @@ export const portfolioData = {
     { name: "C++", icon: "bi-code-slash", category: "Programming Languages" },
     { name: "JavaScript", icon: "bi-filetype-js", category: "Programming Languages" },
     { name: "Dart", icon: "bi-code-square", category: "Programming Languages" },
+    { name: "Java", icon: "bi-filetype-java", category: "Programming Languages" },
+    { name: "C#", icon: "bi-hash", category: "Programming Languages" },
+    { name: "R", icon: "bi-code-square", category: "Programming Languages" },
     
     { name: "HTML", icon: "bi-filetype-html", category: "Frontend" },
     { name: "CSS", icon: "bi-filetype-css", category: "Frontend" },
@@ -48,7 +51,14 @@ export const portfolioData = {
     { name: "OOP", icon: "bi-diagram-3" },
     { name: "DBMS", icon: "bi-database-fill-gear" },
     { name: "Operating Systems", icon: "bi-pc-display-horizontal" },
-    { name: "Computer Networks", icon: "bi-diagram-2" }
+    { name: "Computer Networks", icon: "bi-diagram-2" },
+    { name: "Software Engineering", icon: "bi-gear-wide" },
+    { name: "Computer Architecture", icon: "bi-cpu" },
+    { name: "Cyber Security", icon: "bi-shield-lock" },
+    { name: "Cloud Computing", icon: "bi-cloud-fill" },
+    { name: "AI & ML", icon: "bi-robot" },
+    { name: "Theory of Computation", icon: "bi-journal-code" },
+    { name: "Compiler Design", icon: "bi-braces" }
   ],
   
   experience: [
@@ -180,6 +190,28 @@ export const portfolioData = {
       githubUrl: "https://github.com/mr-rchaurasiya/ramnevas-portfolio",
       live: "https://ramnevas-portfolio.vercel.app/",
       liveUrl: "https://ramnevas-portfolio.vercel.app/"
+    },
+    {
+      title: "Weather Dashboard",
+      category: "web",
+      description: "A responsive weather forecasting application that displays real-time weather conditions and 5-day forecasts using OpenWeatherMap API and browser geolocation services.",
+      tags: ["React.js", "OpenWeatherMap API", "Bootstrap 5", "Geolocation API"],
+      technologies: ["React.js", "OpenWeatherMap API", "Bootstrap 5", "Geolocation API"],
+      github: "https://github.com/mr-rchaurasiya/weather-dashboard",
+      githubUrl: "https://github.com/mr-rchaurasiya/weather-dashboard",
+      live: "",
+      liveUrl: ""
+    },
+    {
+      title: "Task Management App",
+      category: "mobile",
+      description: "A clean and intuitive task management mobile app built with Flutter and Hive database for fast offline storage, status updates, and custom tags.",
+      tags: ["Flutter", "Dart", "Hive DB", "Provider Pattern"],
+      technologies: ["Flutter", "Dart", "Hive DB", "Provider Pattern"],
+      github: "https://github.com/mr-rchaurasiya/todo-app",
+      githubUrl: "https://github.com/mr-rchaurasiya/todo-app",
+      live: "",
+      liveUrl: ""
     }
   ],
   

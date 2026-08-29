@@ -97,8 +97,8 @@ const getResume = async (req, res) => {
 // @access  Private (Admin)
 const createProject = async (req, res) => {
   try {
-    const { title, description, technologies, githubUrl, liveUrl, image } = req.body;
-    const project = await Project.create({ title, description, technologies, githubUrl, liveUrl, image });
+    const { title, description, category, technologies, githubUrl, liveUrl, image } = req.body;
+    const project = await Project.create({ title, description, category, technologies, githubUrl, liveUrl, image });
     res.status(201).json(project);
   } catch (error) {
     res.status(400).json({ message: 'Error creating project', error: error.message });
@@ -110,13 +110,14 @@ const createProject = async (req, res) => {
 // @access  Private (Admin)
 const updateProject = async (req, res) => {
   try {
-    const { title, description, technologies, githubUrl, liveUrl, image } = req.body;
+    const { title, description, category, technologies, githubUrl, liveUrl, image } = req.body;
     const project = await Project.findById(req.params.id);
     if (!project) {
       return res.status(404).json({ message: 'Project not found' });
     }
     project.title = title || project.title;
     project.description = description || project.description;
+    project.category = category || project.category;
     project.technologies = technologies || project.technologies;
     project.githubUrl = githubUrl !== undefined ? githubUrl : project.githubUrl;
     project.liveUrl = liveUrl !== undefined ? liveUrl : project.liveUrl;

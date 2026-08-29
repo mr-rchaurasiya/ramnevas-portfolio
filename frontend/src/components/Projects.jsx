@@ -87,9 +87,18 @@ const enrichProjectData = (project) => {
   };
 };
 
+const categories = [
+  { id: 'all', label: 'All Projects', icon: 'bi-grid-fill' },
+  { id: 'web', label: 'Web Apps', icon: 'bi-globe' },
+  { id: 'mobile', label: 'Mobile Apps', icon: 'bi-phone' },
+  { id: 'other', label: 'Others', icon: 'bi-terminal' }
+];
+
 const Projects = () => {
   const { data: projects, loading } = useFetchData('projects', portfolioData.projects);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [visibleCount, setVisibleCount] = useState(6);
 
   if (loading) {
     return (
@@ -105,77 +114,154 @@ const Projects = () => {
 
   const hasProjects = projects && projects.length > 0;
 
+  // Filter projects by category
+  const filteredProjects = !hasProjects ? [] : projects.filter(project => {
+    if (activeCategory === 'all') return true;
+    return (project.category || '').toLowerCase() === activeCategory;
+  });
+
+  const projectsToShow = filteredProjects.slice(0, visibleCount);
+
+  const handleCategoryChange = (catId) => {
+    setActiveCategory(catId);
+    setVisibleCount(6);
+  };
+
   return (
     <section id="projects" className="position-relative bg-dark-base py-5">
       <div className="container">
         <AnimatedTitle text="Featured Projects" />
 
+        {/* Category Filters */}
+        <div className="d-flex flex-wrap justify-content-center gap-2 mb-5 pb-2">
+          {categories.map((cat) => {
+            const isActive = activeCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => handleCategoryChange(cat.id)}
+                className={`filter-btn ${isActive ? 'active' : ''}`}
+                aria-label={`Filter by ${cat.label}`}
+              >
+                <i className={`bi ${cat.icon}`}></i>
+                {cat.label}
+              </button>
+            );
+          })}
+        </div>
+
         {/* Projects Grid */}
-        <div className="row g-4 justify-content-center">
+        <div className="row g-4 justify-content-center position-relative">
           {!hasProjects ? (
             <div className="col-12">
               <div className="text-center py-5 card-glass">
                 <p className="text-muted mb-0">No projects loaded.</p>
               </div>
             </div>
+          ) : filteredProjects.length === 0 ? (
+            <div className="col-12">
+              <motion.div 
+                className="text-center py-5 card-glass"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+              >
+                <p className="text-muted mb-0">No projects found in this category.</p>
+              </motion.div>
+            </div>
           ) : (
-            projects.map((project, index) => {
-              const enriched = enrichProjectData(project);
-              return (
-                <div className="col-md-6" key={index}>
-                  <div 
-                    onClick={() => setSelectedProject(enriched)}
-                    className="card-glass p-4 h-100 d-flex flex-column justify-content-between hover-lift hover-glow cursor-pointer"
-                    title="Click to view details, challenges, and solutions!"
+            <AnimatePresence mode="popLayout">
+              {projectsToShow.map((project, index) => {
+                const enriched = enrichProjectData(project);
+                return (
+                  <motion.div 
+                    className="col-md-6" 
+                    key={project._id || project.title || index}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: 15 }}
+                    transition={{ duration: 0.25 }}
                   >
-                    <div>
-                      <div className="d-flex justify-content-between align-items-start mb-3">
-                        <span className="badge bg-dark border-1 text-gradient border-white-10 text-uppercase tracking-wider small fw-semibold px-3 py-2" style={{ border: '1px solid rgba(255,255,255,0.08)', fontSize: '0.75rem' }}>
-                          {enriched.category}
-                        </span>
-                        <span className="badge bg-info-subtle text-info border border-info-subtle px-2 py-1 rounded-pill small fw-semibold d-flex align-items-center gap-1" style={{ fontSize: '0.65rem' }}>
-                          <i className="bi bi-info-circle"></i> Details
-                        </span>
-                      </div>
-                      
-                      <h3 className="h4 text-white fw-bold mb-3">{enriched.title}</h3>
-                      <p className="text-muted small mb-4">{enriched.description}</p>
-                    </div>
-                    
-                    <div>
-                      <div className="d-flex flex-wrap gap-2 mb-2">
-                        {(enriched.tags || enriched.technologies || []).map((tag, tIndex) => (
-                          <span 
-                            className="badge bg-secondary-subtle text-secondary-emphasis small px-2 py-1" 
-                            key={tIndex}
-                            style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}
-                          >
-                            {tag}
+                    <div 
+                      onClick={() => setSelectedProject(enriched)}
+                      className="card-glass p-4 h-100 d-flex flex-column justify-content-between hover-lift hover-glow cursor-pointer"
+                      title="Click to view details, challenges, and solutions!"
+                    >
+                      <div>
+                        <div className="d-flex justify-content-between align-items-start mb-3">
+                          <span className="badge bg-dark border-1 text-gradient border-white-10 text-uppercase tracking-wider small fw-semibold px-3 py-2" style={{ border: '1px solid rgba(255,255,255,0.08)', fontSize: '0.75rem' }}>
+                            {enriched.category || 'project'}
                           </span>
-                        ))}
+                          <span className="badge bg-info-subtle text-info border border-info-subtle px-2 py-1 rounded-pill small fw-semibold d-flex align-items-center gap-1" style={{ fontSize: '0.65rem' }}>
+                            <i className="bi bi-info-circle"></i> Details
+                          </span>
+                        </div>
+                        
+                        <h3 className="h4 text-white fw-bold mb-3">{enriched.title}</h3>
+                        <p className="text-muted small mb-4">{enriched.description}</p>
                       </div>
                       
-                      {(enriched.githubUrl || enriched.liveUrl) && (
-                        <div className="d-flex gap-3 mt-4" onClick={(e) => e.stopPropagation()}>
-                          {enriched.liveUrl && (
-                            <a href={enriched.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-custom btn-sm w-50 py-2">
-                              Live Preview
-                            </a>
-                          )}
-                          {enriched.githubUrl && (
-                            <a href={enriched.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary-gradient btn-sm w-50 py-2">
-                              View Code
-                            </a>
-                          )}
+                      <div>
+                        <div className="d-flex flex-wrap gap-2 mb-2">
+                          {(enriched.tags || enriched.technologies || []).map((tag, tIndex) => (
+                            <span 
+                              className="badge bg-secondary-subtle text-secondary-emphasis small px-2 py-1" 
+                              key={tIndex}
+                              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}
+                            >
+                              {tag}
+                            </span>
+                          ))}
                         </div>
-                      )}
+                        
+                        {(enriched.githubUrl || enriched.liveUrl) && (
+                          <div className="d-flex gap-3 mt-4" onClick={(e) => e.stopPropagation()}>
+                            {enriched.liveUrl && (
+                              <a href={enriched.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-custom btn-sm w-50 py-2">
+                                Live Preview
+                              </a>
+                            )}
+                            {enriched.githubUrl && (
+                              <a href={enriched.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary-gradient btn-sm w-50 py-2">
+                                View Code
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </div>
-              );
-            })
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
           )}
         </div>
+
+        {/* Show More / Show Less Button */}
+        {hasProjects && filteredProjects.length > 6 && (
+          <div className="d-flex justify-content-center mt-5">
+            {visibleCount < filteredProjects.length ? (
+              <button 
+                onClick={() => setVisibleCount(filteredProjects.length)}
+                className="btn btn-primary-gradient px-4 py-2.5 rounded-pill shadow-lg d-flex align-items-center gap-2"
+                style={{ minHeight: '44px' }}
+              >
+                <span>Show More Projects</span>
+                <i className="bi bi-chevron-down fw-bold"></i>
+              </button>
+            ) : (
+              <button 
+                onClick={() => setVisibleCount(6)}
+                className="btn btn-outline-custom px-4 py-2.5 rounded-pill d-flex align-items-center gap-2"
+                style={{ minHeight: '44px' }}
+              >
+                <span>Show Less</span>
+                <i className="bi bi-chevron-up fw-bold"></i>
+              </button>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Details Dialog / Modal Overlay */}

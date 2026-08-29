@@ -12,6 +12,11 @@ const projectSchema = new mongoose.Schema(
       required: [true, 'Please add a project description'],
       trim: true,
     },
+    category: {
+      type: String,
+      trim: true,
+      default: 'web',
+    },
     technologies: {
       type: [String],
       required: [true, 'Please specify technologies used in this project'],
