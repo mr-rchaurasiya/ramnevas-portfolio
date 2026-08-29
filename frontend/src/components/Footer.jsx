@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4 text-center text-md-start">
           <div>
             <h3 className="h4 text-white fw-bold mb-2">{name}</h3>
-            <p className="small text-muted mb-0">Full Stack Developer Portfolio</p>
+            <p className="small text-muted mb-0">Software Developer Portfolio</p>
           </div>
           
           <div className="d-flex gap-3 fs-5">

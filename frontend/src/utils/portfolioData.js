@@ -1,7 +1,7 @@
 export const portfolioData = {
   personalInfo: {
     name: "Ramnevas Chaurasiya",
-    title: "Full Stack Developer",
+    title: "Software Developer",
     degreeShort: "B.Tech in CS & IT",
     email: "ramnevas8188@gmail.com",
     location: "Maharajganj, Uttar Pradesh, India",
@@ -11,7 +11,7 @@ export const portfolioData = {
     instagram: "instagram.com/mr_rchaurasiya",
     phone: "+91 8188948708",
     whatsapp: "+91 7830911201",
-    aboutSummary: "I am a Full Stack Developer specialized in building high-performance web applications. I focus on creating clean user interfaces backed by structured server architectures and optimized databases.",
+    aboutSummary: "I am a Software Developer specialized in building high-performance web and mobile applications. I focus on creating clean user interfaces backed by structured server architectures and optimized databases.",
     aboutDetails: "I hold a B.Tech in Computer Science & Information Technology from Mahatma Jyotiba Phule Rohilkhand University. I specialize in the React, Node.js, and Express.js ecosystem, with experience in database architectures like MongoDB and PHP development. I am passionate about core computer science concepts and mobile application engineering using Flutter."
   },
   
