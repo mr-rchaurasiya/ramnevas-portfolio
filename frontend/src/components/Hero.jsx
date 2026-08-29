@@ -111,12 +111,10 @@ const Hero = () => {
                 
                 {/* --- FRONT SIDE: Profile Photo --- */}
                 <div
-                  className="position-absolute w-100 h-100 card-glass p-3 shadow-2xl"
+                  className="position-absolute w-100 h-100 card-glass profile-card-front p-3 shadow-2xl"
                   style={{
                     backfaceVisibility: 'hidden', // hides back when rotated
                     WebkitBackfaceVisibility: 'hidden',
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
                     borderRadius: '24px',
                     top: 0,
                     left: 0
@@ -155,13 +153,11 @@ const Hero = () => {
 
                 {/* --- BACK SIDE: Developer Profile Code --- */}
                 <div
-                  className="position-absolute w-100 h-100 card-glass p-4 text-start shadow-2xl"
+                  className="position-absolute w-100 h-100 card-glass code-card p-4 text-start shadow-2xl"
                   style={{
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)', // flips it initially
-                    background: 'linear-gradient(145deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.95))',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
                     borderRadius: '24px',
                     top: 0,
                     left: 0
@@ -179,19 +175,19 @@ const Hero = () => {
                   </div>
                   
                   <div className="mb-3">
-                    <span className="text-primary-emphasis font-monospace d-block">&lt;DeveloperProfile&gt;</span>
+                    <span className="code-tag font-monospace d-block">&lt;DeveloperProfile&gt;</span>
                   </div>
-                  <div className="font-monospace text-white-50 small ps-3 mb-4" style={{ lineHeight: '1.6', fontSize: '0.75rem' }}>
-                    <span className="text-info">name:</span> "{name}",<br />
-                    <span className="text-info">role:</span> "{title}",<br />
-                    <span className="text-info">skills:</span> [<br />
-                    &nbsp;&nbsp;"React.js", "Node.js",<br />
-                    &nbsp;&nbsp;"Express.js", "MongoDB"<br />
+                  <div className="font-monospace code-val small ps-3 mb-4" style={{ lineHeight: '1.6', fontSize: '0.75rem' }}>
+                    <span className="code-key">name:</span> <span className="code-string">"{name}"</span>,<br />
+                    <span className="code-key">role:</span> <span className="code-string">"{title}"</span>,<br />
+                    <span className="code-key">skills:</span> [<br />
+                    &nbsp;&nbsp;<span className="code-string">"React.js"</span>, <span className="code-string">"Node.js"</span>,<br />
+                    &nbsp;&nbsp;<span className="code-string">"Express.js"</span>, <span className="code-string">"MongoDB"</span><br />
                     ],<br />
-                    <span className="text-info">passion:</span> "Scalable Architectures"
+                    <span className="code-key">passion:</span> <span className="code-string">"Scalable Architectures"</span>
                   </div>
                   <div className="text-end">
-                    <span className="text-primary-emphasis font-monospace">&lt;/DeveloperProfile&gt;</span>
+                    <span className="code-tag font-monospace">&lt;/DeveloperProfile&gt;</span>
                   </div>
                 </div>
 

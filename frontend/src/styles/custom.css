@@ -114,6 +114,64 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Profile Card Styles (Front and Back Syntax Highlighting) */
+.profile-card-front {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.light-theme .profile-card-front {
+  background: rgba(15, 23, 42, 0.02) !important;
+  border: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+.code-card {
+  background: linear-gradient(145deg, #0f172a, #020617) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #e2e8f0 !important;
+}
+
+body.light-theme .code-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Code Syntax Highlighter Tokens */
+.code-tag {
+  color: #f43f5e !important; /* Rose/Pink in dark theme */
+  font-weight: 600;
+}
+
+body.light-theme .code-tag {
+  color: #db2777 !important; /* Dark Pink in light theme */
+}
+
+.code-key {
+  color: #38bdf8 !important; /* Cyan in dark theme */
+}
+
+body.light-theme .code-key {
+  color: #2563eb !important; /* Blue in light theme */
+}
+
+.code-string {
+  color: #34d399 !important; /* Emerald in dark theme */
+}
+
+body.light-theme .code-string {
+  color: #059669 !important; /* Green in light theme */
+}
+
+.code-val {
+  color: #94a3b8 !important; /* Muted Slate in dark theme */
+}
+
+body.light-theme .code-val {
+  color: #475569 !important; /* Slate 600 in light theme */
+}
+
 .nav-link-custom {
   color: var(--text-muted);
   font-weight: 500;
