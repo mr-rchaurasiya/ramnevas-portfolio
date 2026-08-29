@@ -49,17 +49,17 @@ const Education = () => {
                   {(edu.dgpa || edu.percentage || edu.division) && (
                     <div className="d-flex flex-wrap gap-2 mt-3 mb-1">
                       {edu.dgpa && (
-                        <span className="badge bg-dark border border-white-10 text-white-50 px-3 py-2 small" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <span className="badge edu-badge px-3 py-2 small">
                           <strong>DGPA:</strong> {edu.dgpa}
                         </span>
                       )}
                       {edu.percentage && (
-                        <span className="badge bg-dark border border-white-10 text-white-50 px-3 py-2 small" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <span className="badge edu-badge px-3 py-2 small">
                           <strong>Percentage:</strong> {edu.percentage}
                         </span>
                       )}
                       {edu.division && (
-                        <span className="badge bg-dark border border-white-10 text-white-50 px-3 py-2 small" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <span className="badge edu-badge px-3 py-2 small">
                           <strong>Division:</strong> {edu.division}
                         </span>
                       )}
