@@ -38,7 +38,7 @@ const Experience = () => {
                     <div className="timeline-dot"></div>
                     <div className="card-glass p-4">
                       <span className="text-gradient fw-bold small text-uppercase tracking-wider d-block mb-1">
-                        {exp.duration}
+                        {exp.duration || (exp.startDate && exp.endDate ? `${exp.startDate} – ${exp.endDate}` : exp.startDate || exp.endDate || '')}
                       </span>
                       <h3 className="h4 text-white fw-bold mb-1">{exp.role}</h3>
                       <h4 className="h6 text-muted mb-3 fw-semibold">{exp.company}</h4>

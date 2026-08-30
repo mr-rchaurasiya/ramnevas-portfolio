@@ -31,6 +31,57 @@ const Testimonials = () => {
       role: "Chemical Engineer",
       company: "Independent Reviewer",
       avatar: "DG"
+    },
+    {
+      quote: "The portfolio design and component architecture are clean, functional, and user-friendly. A solid showcase of React and frontend development practices.",
+      name: "Mohan Pratap",
+      role: "Software Engineering Intern",
+      company: "MNJ Software / Dronamaps / RMSI",
+      avatar: "MP"
+    },
+    {
+      quote: "Bhai accha bana hai, sab to hai isme. (It is built really well and includes all the essential sections. It's a great project to highlight on a resume!)",
+      name: "Mohd Tayyab",
+      role: "Software Developer",
+      company: "CDAC Noida / CS & IT Graduate",
+      avatar: "MT"
+    },
+    {
+      quote: "Bhai bohot sahi hai! (Really well-crafted and looks awesome. Great integration of skills and project details.)",
+      name: "Avinash Maurya",
+      role: "Mobile App Developer",
+      company: "Appening Infotech",
+      avatar: "AM",
+      linkedin: "https://www.linkedin.com/in/avinash-maurya-8a5357202/"
+    },
+    {
+      quote: "Badhiya hai bhai! (Looks great, brother! The design and structure are highly professional.)",
+      name: "Vikas Patel",
+      role: "Software Engineer",
+      company: "Tech Company, Noida",
+      avatar: "VP"
+    },
+    {
+      quote: "Mst lg rha! (It looks awesome! The overall design, API integrations, and layout are highly professional.)",
+      name: "Himanshu Chaurasia",
+      role: "Software Engineer",
+      company: "Biz2x",
+      avatar: "HC",
+      linkedin: "https://www.linkedin.com/in/himanshu-chaurasia/"
+    },
+    {
+      quote: "Bhai badhiya banaya hai. (Great job! The portfolio has a very neat structure and represents all our engineering projects nicely.)",
+      name: "Prashant Rathor",
+      role: "CS & IT Graduate",
+      company: "Classmate",
+      avatar: "PR"
+    },
+    {
+      quote: "Bhai ek time pe do intern aur 1+ yrs of exp likhe ho, usko mention karo. (You have mentioned doing two internships at the same time and having 1+ years of experience, you should clarify or highlight that in your resume/details.)",
+      name: "Ayush Kumar Mishra",
+      role: "Technical Developer AI & ML",
+      company: "Independent Reviewer",
+      avatar: "AM"
     }
   ];
 
@@ -81,7 +132,21 @@ const Testimonials = () => {
                         {testimonials[currentIndex].avatar}
                       </div>
                       <div className="text-start">
-                        <h4 className="h6 text-white mb-0 fw-bold">{testimonials[currentIndex].name}</h4>
+                        <div className="d-flex align-items-center gap-2">
+                          <h4 className="h6 text-white mb-0 fw-bold">{testimonials[currentIndex].name}</h4>
+                          {testimonials[currentIndex].linkedin && (
+                            <a 
+                              href={testimonials[currentIndex].linkedin} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="text-info hover-scale"
+                              style={{ fontSize: '0.9rem', transition: 'transform 0.2s' }}
+                              title="View LinkedIn Profile"
+                            >
+                              <i className="bi bi-linkedin"></i>
+                            </a>
+                          )}
+                        </div>
                         <span className="small text-muted">{testimonials[currentIndex].role} &middot; <strong className="text-gradient">{testimonials[currentIndex].company}</strong></span>
                       </div>
                     </div>

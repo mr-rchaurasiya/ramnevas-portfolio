@@ -90,8 +90,8 @@ const About = () => {
             <div className="row g-4">
               <div className="col-6">
                 <div className="card-glass p-4 text-center h-100">
-                  <h4 className="display-4 fw-bold text-gradient mb-2">1+</h4>
-                  <p className="small text-muted mb-0 fw-semibold text-uppercase tracking-wider">Years Experience</p>
+                  <h4 className="display-4 fw-bold text-gradient mb-2">2</h4>
+                  <p className="small text-muted mb-0 fw-semibold text-uppercase tracking-wider">Completed Internships</p>
                 </div>
               </div>
               <div className="col-6">
