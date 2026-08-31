@@ -227,7 +227,7 @@ export const portfolioData = {
       award: "C and C++ Proficiency",
       details: "Awarded top skill rank stars for structural programming and problem-solving in C and C++.",
       icon: "bi-award",
-      url: "https://www.hackerrank.com/profile/ramnevas81889"
+      url: "https://www.hackerrank.com/profile/mr_rchaurasiya"
     }
   ],
 

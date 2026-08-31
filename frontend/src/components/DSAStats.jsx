@@ -37,8 +37,8 @@ const DSAStats = () => {
       { name: "Problem Solving", stars: 5, color: "var(--primary-accent)" },
       { name: "C++ Programming", stars: 5, color: "var(--secondary-accent)" }
     ],
-    username: "ramnevas81889",
-    profileUrl: "https://www.hackerrank.com/profile/ramnevas81889"
+    username: "mr_rchaurasiya",
+    profileUrl: "https://www.hackerrank.com/profile/mr_rchaurasiya"
   };
 
   return (

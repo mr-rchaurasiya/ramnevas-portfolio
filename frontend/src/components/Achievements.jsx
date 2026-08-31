@@ -46,7 +46,7 @@ const Achievements = () => {
               );
 
               // Support both backend/fallback fields or hardcoded check for HackerRank
-              const targetUrl = ach.url || (ach.title === "5-Star Coding Badge" ? "https://www.hackerrank.com/profile/ramnevas81889" : null);
+              const targetUrl = ach.url || (ach.title === "5-Star Coding Badge" ? "https://www.hackerrank.com/profile/mr_rchaurasiya" : null);
 
               return (
                 <div className="col-md-5" key={index}>

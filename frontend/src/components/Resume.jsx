@@ -71,7 +71,7 @@ const Resume = () => {
                 <i className="bi bi-code-slash me-1 text-gradient"></i>LeetCode
               </a>
               <span>|</span>
-              <a href="https://www.hackerrank.com/profile/ramnevas81889" target="_blank" rel="noopener noreferrer" className="text-decoration-none hover-text-primary font-monospace">
+              <a href="https://www.hackerrank.com/profile/mr_rchaurasiya" target="_blank" rel="noopener noreferrer" className="text-decoration-none hover-text-primary font-monospace">
                 <i className="bi bi-award-fill me-1 text-gradient"></i>HackerRank
               </a>
               <span>|</span>
