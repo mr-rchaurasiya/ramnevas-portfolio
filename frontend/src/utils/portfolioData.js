@@ -6,7 +6,7 @@ export const portfolioData = {
     email: "ramnevas8188@gmail.com",
     location: "Maharajganj, Uttar Pradesh, India",
     locationUrl: "https://maps.app.goo.gl/Znx5tn3AK6Go8kvH7",
-    linkedin: "linkedin.com/in/ramnevas-chaurasiya-09700a208",
+    linkedin: "linkedin.com/in/mr-rchaurasiya",
     github: "github.com/ramnevas",
     instagram: "instagram.com/mr_rchaurasiya",
     phone: "+91 8188948708",

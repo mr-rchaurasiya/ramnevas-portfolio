@@ -59,7 +59,7 @@ const Resume = () => {
             </div>
 
             <div className="d-flex flex-wrap justify-content-center gap-2 mt-2 text-white-50 small">
-              <a href="https://www.linkedin.com/in/ramnevas-chaurasiya-09700a208/" target="_blank" rel="noopener noreferrer" className="text-decoration-none hover-text-primary font-monospace">
+              <a href="https://www.linkedin.com/in/mr-rchaurasiya/" target="_blank" rel="noopener noreferrer" className="text-decoration-none hover-text-primary font-monospace">
                 <i className="bi bi-linkedin me-1 text-gradient"></i>LinkedIn
               </a>
               <span>|</span>
