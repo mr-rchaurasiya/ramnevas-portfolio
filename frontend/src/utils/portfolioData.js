@@ -115,6 +115,17 @@ export const portfolioData = {
       liveUrl: "https://astrologer-client-1o5f.vercel.app/"
     },
     {
+      title: "UPSC PrepPilot — AI Exam Prep Platform",
+      category: "web",
+      description: "A comprehensive, full-stack AI-powered UPSC Civil Services preparation platform featuring spaced-repetition revision scheduling, AI Mains answer evaluation, topic-wise syllabus tracking, dynamic MCQ practice, mistake book logging, and custom exam analytics.",
+      tags: ["React.js", "Node.js", "Express.js", "MongoDB", "AI / Gemini", "JWT", "TailwindCSS", "Vite"],
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "AI / Gemini", "JWT", "TailwindCSS", "Vite"],
+      github: "https://github.com/mr-rchaurasiya/UPSC-PrepPilot",
+      githubUrl: "https://github.com/mr-rchaurasiya/UPSC-PrepPilot",
+      live: "https://upsc-prep-pilot.vercel.app/",
+      liveUrl: "https://upsc-prep-pilot.vercel.app/"
+    },
+    {
       title: "CareerFlow — Job Tracker",
       category: "web",
       description: "A modern Job Application Tracker with JWT authentication, a responsive glassmorphic dashboard, search/filter capabilities, and a hybrid database adapter that falls back seamlessly to local JSON file storage if MongoDB is offline.",

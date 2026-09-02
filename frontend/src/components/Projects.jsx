@@ -25,6 +25,23 @@ const enrichProjectData = (project) => {
     };
   }
 
+  if (title.includes('preppilot') || title.includes('upsc')) {
+    return {
+      ...project,
+      challenges: [
+        "Designing a multi-stage spaced-repetition algorithm (Day 1, 3, 7, 30) across complex multi-paper UPSC syllabus domains.",
+        "Evaluating subjective UPSC Mains answer scripts with contextual rubric scoring without hallucinating facts or guidelines.",
+        "Visualizing real-time weighted preparation audits (30% Syllabus, 30% Mocks, 20% Mains, 20% Revisions) across large datasets."
+      ],
+      solutions: [
+        "Engineered an automated spaced-repetition revision engine with intelligent topic review queues and decay-prevention reminders.",
+        "Integrated Google Gemini LLM with structured rubric prompts analyzing structure, intro-body-conclusion flow, and committee references.",
+        "Implemented interactive SVG/Canvas analytics and Mistake Book categorization (factual, conceptual, time-pressure) for actionable insights."
+      ],
+      longDescription: "A comprehensive, full-stack AI-powered UPSC Civil Services Examination (CSE) preparation and performance management platform. Empowers aspirants with automated spaced-repetition scheduling, AI-assisted Mains answer evaluation, comprehensive syllabus progress tracking, dynamic MCQ practice with error classification, and real-time exam readiness audits."
+    };
+  }
+
   if (title.includes('careerflow')) {
     return {
       ...project,

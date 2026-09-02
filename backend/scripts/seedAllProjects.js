@@ -33,6 +33,15 @@ const seedData = async () => {
         image: ""
       },
       {
+        title: "UPSC PrepPilot — AI Exam Prep Platform",
+        category: "web",
+        description: "A comprehensive, full-stack AI-powered UPSC Civil Services preparation platform featuring spaced-repetition revision scheduling, AI Mains answer evaluation, topic-wise syllabus tracking, dynamic MCQ practice, mistake book logging, and custom exam analytics.",
+        technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "AI / Gemini", "JWT", "TailwindCSS", "Vite"],
+        githubUrl: "https://github.com/mr-rchaurasiya/UPSC-PrepPilot",
+        liveUrl: "https://upsc-prep-pilot.vercel.app/",
+        image: ""
+      },
+      {
         title: "CareerFlow — Job Tracker",
         category: "web",
         description: "A modern Job Application Tracker with JWT authentication, a responsive glassmorphic dashboard, search/filter capabilities, and a hybrid database adapter that falls back seamlessly to local JSON file storage if MongoDB is offline.",
