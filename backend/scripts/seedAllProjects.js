@@ -3,7 +3,14 @@ import dotenv from 'dotenv';
 import Project from '../models/Project.js';
 import Experience from '../models/Experience.js';
 
-// Load environment variables
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load environment variables from backend/.env or root .env
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 dotenv.config();
 
 const seedData = async () => {
@@ -47,7 +54,7 @@ const seedData = async () => {
         description: "A modern Job Application Tracker with JWT authentication, a responsive glassmorphic dashboard, search/filter capabilities, and a hybrid database adapter that falls back seamlessly to local JSON file storage if MongoDB is offline.",
         technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Bootstrap 5"],
         githubUrl: "https://github.com/mr-rchaurasiya/CareerFlow",
-        liveUrl: "",
+        liveUrl: "https://career-flow-virid.vercel.app/",
         image: ""
       },
       {

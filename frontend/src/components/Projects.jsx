@@ -43,8 +43,19 @@ const enrichProjectData = (project) => {
   }
 
   if (title.includes('careerflow')) {
+    const liveLink = (project.liveUrl && !project.liveUrl.includes('upsc-prep-pilot'))
+      ? project.liveUrl
+      : (project.live && !project.live.includes('upsc-prep-pilot'))
+        ? project.live
+        : "https://career-flow-virid.vercel.app/";
+    const githubLink = project.githubUrl || project.github || "https://github.com/mr-rchaurasiya/CareerFlow";
+
     return {
       ...project,
+      liveUrl: liveLink,
+      live: liveLink,
+      githubUrl: githubLink,
+      github: githubLink,
       challenges: [
         "Handling database connection dropouts gracefully on production environments.",
         "Ensuring complete data integrity when offline with transparent write propagation.",
@@ -249,15 +260,15 @@ const Projects = () => {
                           ))}
                         </div>
                         
-                        {(enriched.githubUrl || enriched.liveUrl) && (
+                        {(enriched.githubUrl || enriched.github || enriched.liveUrl || enriched.live) && (
                           <div className="d-flex gap-3 mt-4" onClick={(e) => e.stopPropagation()}>
-                            {enriched.liveUrl && (
-                              <a href={enriched.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-custom btn-sm w-50 py-2">
+                            {(enriched.liveUrl || enriched.live) && (
+                              <a href={enriched.liveUrl || enriched.live} target="_blank" rel="noopener noreferrer" className="btn btn-outline-custom btn-sm w-50 py-2">
                                 Live Preview
                               </a>
                             )}
-                            {enriched.githubUrl && (
-                              <a href={enriched.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary-gradient btn-sm w-50 py-2">
+                            {(enriched.githubUrl || enriched.github) && (
+                              <a href={enriched.githubUrl || enriched.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary-gradient btn-sm w-50 py-2">
                                 View Code
                               </a>
                             )}
@@ -376,13 +387,13 @@ const Projects = () => {
 
               {/* Links */}
               <div className="d-flex gap-3">
-                {selectedProject.liveUrl && (
-                  <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-custom w-50 py-2">
+                {(selectedProject.liveUrl || selectedProject.live) && (
+                  <a href={selectedProject.liveUrl || selectedProject.live} target="_blank" rel="noopener noreferrer" className="btn btn-outline-custom w-50 py-2">
                     Live Demo <i className="bi bi-box-arrow-up-right ms-1"></i>
                   </a>
                 )}
-                {selectedProject.githubUrl && (
-                  <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary-gradient w-50 py-2">
+                {(selectedProject.githubUrl || selectedProject.github) && (
+                  <a href={selectedProject.githubUrl || selectedProject.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary-gradient w-50 py-2">
                     GitHub Code <i className="bi bi-github ms-1"></i>
                   </a>
                 )}

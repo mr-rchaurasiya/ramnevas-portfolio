@@ -133,8 +133,8 @@ export const portfolioData = {
       technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Bootstrap 5"],
       github: "https://github.com/mr-rchaurasiya/CareerFlow",
       githubUrl: "https://github.com/mr-rchaurasiya/CareerFlow",
-      live: "",
-      liveUrl: ""
+      live: "https://career-flow-virid.vercel.app/",
+      liveUrl: "https://career-flow-virid.vercel.app/"
     },
     {
       title: "PulseMD Doctor Portal",
