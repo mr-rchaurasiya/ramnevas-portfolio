@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [submitting, setSubmitting] = useState(false);
   
@@ -68,15 +68,28 @@ const Login = () => {
           </div>
           
           <div className="mb-4">
-            <label className="form-label text-white-50 small fw-semibold">Password</label>
-            <input 
-              type="password" 
-              className="form-control form-control-custom"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••"
-              required
-            />
+            <div className="d-flex justify-content-between align-items-center mb-1">
+              <label className="form-label text-white-50 small fw-semibold mb-0">Password</label>
+              <button 
+                type="button" 
+                onClick={() => setShowPassword(!showPassword)}
+                className="btn btn-link p-0 text-decoration-none text-info small"
+                style={{ fontSize: '0.8rem' }}
+              >
+                <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'} me-1`}></i>
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
+            <div className="position-relative">
+              <input 
+                type={showPassword ? 'text' : 'password'} 
+                className="form-control form-control-custom pe-5"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••"
+                required
+              />
+            </div>
           </div>
           
           <button 
