@@ -24,6 +24,15 @@ const seedData = async () => {
 
     const newProjects = [
       {
+        title: "Astrologer — AI Vedic Astrology Platform",
+        category: "web",
+        description: "A production-grade AI-powered Vedic Astrology SaaS platform combining deterministic astronomical algorithms (VSOP87, Lahiri Ayanamsa, D1/D9/D10 Kundli, Vimshottari Dasha), personalized AI consultation, multi-decade life curve analytics, Razorpay subscriptions, and voice AI.",
+        technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "AI / OpenAI", "Redis", "Docker", "Vite"],
+        githubUrl: "https://github.com/mr-rchaurasiya/Astrologer",
+        liveUrl: "https://astrologer-client-1o5f.vercel.app/",
+        image: ""
+      },
+      {
         title: "CareerFlow — Job Tracker",
         category: "web",
         description: "A modern Job Application Tracker with JWT authentication, a responsive glassmorphic dashboard, search/filter capabilities, and a hybrid database adapter that falls back seamlessly to local JSON file storage if MongoDB is offline.",

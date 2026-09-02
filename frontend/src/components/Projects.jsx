@@ -8,6 +8,23 @@ import AnimatedTitle from './AnimatedTitle';
 const enrichProjectData = (project) => {
   const title = (project.title || '').toLowerCase();
   
+  if (title.includes('astrologer')) {
+    return {
+      ...project,
+      challenges: [
+        "Ensuring sub-arcsecond planetary calculation accuracy with VSOP87 and Lahiri Ayanamsa algorithms.",
+        "Grounding AI Vedic astrology consultations with structured Kundli context without LLM hallucinations.",
+        "Maintaining low-latency streaming responses and real-time horoscope generation under load."
+      ],
+      solutions: [
+        "Engineered deterministic astronomical calculation engines with golden dataset automated tests.",
+        "Designed structured prompt synthesis injecting D1/D9/D10 and Vimshottari Dasha data into AI context.",
+        "Implemented Redis polymorphic caching and Server-Sent Events (SSE) for instant consultations."
+      ],
+      longDescription: "A production-grade AI-powered Vedic astrology SaaS platform combining astronomical precision (VSOP87, Lahiri Ayanamsa, D1/D9/D10 Kundli, Vimshottari Dasha) with personalized AI consultation, multi-decade life curve analytics, Razorpay subscriptions, and voice AI."
+    };
+  }
+
   if (title.includes('careerflow')) {
     return {
       ...project,

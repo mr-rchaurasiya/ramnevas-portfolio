@@ -104,6 +104,17 @@ export const portfolioData = {
   
   projects: [
     {
+      title: "Astrologer — AI Vedic Astrology Platform",
+      category: "web",
+      description: "A production-grade AI-powered Vedic Astrology SaaS platform combining deterministic astronomical algorithms (VSOP87, Lahiri Ayanamsa, D1/D9/D10 Kundli, Vimshottari Dasha), personalized AI consultation, multi-decade life curve analytics, Razorpay subscriptions, and voice AI.",
+      tags: ["React.js", "Node.js", "Express.js", "MongoDB", "AI / OpenAI", "Redis", "Docker", "Vite"],
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "AI / OpenAI", "Redis", "Docker", "Vite"],
+      github: "https://github.com/mr-rchaurasiya/Astrologer",
+      githubUrl: "https://github.com/mr-rchaurasiya/Astrologer",
+      live: "https://astrologer-client-1o5f.vercel.app/",
+      liveUrl: "https://astrologer-client-1o5f.vercel.app/"
+    },
+    {
       title: "CareerFlow — Job Tracker",
       category: "web",
       description: "A modern Job Application Tracker with JWT authentication, a responsive glassmorphic dashboard, search/filter capabilities, and a hybrid database adapter that falls back seamlessly to local JSON file storage if MongoDB is offline.",
