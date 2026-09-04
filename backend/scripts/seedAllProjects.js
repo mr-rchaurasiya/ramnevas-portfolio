@@ -49,6 +49,15 @@ const seedData = async () => {
         image: ""
       },
       {
+        title: "AstroGenesis 3D — Cosmic Evolution Explorer",
+        category: "web",
+        description: "An interactive educational 3D universe simulator and astronomy platform. Explore galaxies, celestial orbital mechanics, and the complete lifecycle of stars in real-time WebGL/Three.js.",
+        technologies: ["Three.js", "WebGL", "React.js", "JavaScript", "Vite", "TailwindCSS"],
+        githubUrl: "https://github.com/mr-rchaurasiya/AstroGenesis-3D",
+        liveUrl: "https://astro-genesis-3-d.vercel.app/",
+        image: ""
+      },
+      {
         title: "CareerFlow — Job Tracker",
         category: "web",
         description: "A modern Job Application Tracker with JWT authentication, a responsive glassmorphic dashboard, search/filter capabilities, and a hybrid database adapter that falls back seamlessly to local JSON file storage if MongoDB is offline.",

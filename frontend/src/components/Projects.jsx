@@ -42,6 +42,30 @@ const enrichProjectData = (project) => {
     };
   }
 
+  if (title.includes('astrogenesis') || title.includes('cosmic')) {
+    const liveLink = project.liveUrl || project.live || "https://astro-genesis-3-d.vercel.app/";
+    const githubLink = project.githubUrl || project.github || "https://github.com/mr-rchaurasiya/AstroGenesis-3D";
+
+    return {
+      ...project,
+      liveUrl: liveLink,
+      live: liveLink,
+      githubUrl: githubLink,
+      github: githubLink,
+      challenges: [
+        "Rendering high-density particle systems and orbital trajectories smoothly across various GPUs at 60 FPS.",
+        "Simulating complex multi-stage stellar evolution physics and accurate celestial shader materials in real time.",
+        "Engineering responsive 3D viewport navigation with cinematic zoom transitions and interactive HUD controls."
+      ],
+      solutions: [
+        "Utilized Three.js & WebGL shader materials with level-of-detail (LOD) geometry optimization for fluid rendering.",
+        "Developed deterministic astronomical models to animate star lifecycles from protostars to supernovae and black holes.",
+        "Implemented smooth camera tweening with OrbitControls and glassmorphic HUD overlays using React & TailwindCSS."
+      ],
+      longDescription: "An interactive educational universe simulator and cosmic evolution platform. Explore realistic galaxies, celestial orbital mechanics, and the complete lifecycle of stars in real-time WebGL/Three.js 3D."
+    };
+  }
+
   if (title.includes('careerflow')) {
     const liveLink = (project.liveUrl && !project.liveUrl.includes('upsc-prep-pilot'))
       ? project.liveUrl
